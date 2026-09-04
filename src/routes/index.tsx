@@ -179,6 +179,7 @@ function Index() {
                 { title: "Suits", text: "Imported Italian suits, cut to flatter", to: "/suits" as const },
                 { title: "Shoes", text: "Genuine leather, finished by hand", to: "/shoes" as const },
                 { title: "Shirts", text: "2ply Egyptian cotton", to: "/shirts" as const },
+                { title: "Coats", text: "Tailored coats & overcoats", to: "/coats" as const },
               ].map((row) => (
                 <li key={row.title}>
                   <Link
@@ -249,41 +250,45 @@ function Index() {
             Step into our boutique for a personal fitting. Our team typically
             replies within minutes on WhatsApp — or find us at a centre near you.
           </p>
-          <div className="mt-10 flex flex-wrap gap-4">
-            <a
-              href="https://www.google.com/maps/search/Marco+Adamo"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-md bg-primary px-7 py-3.5 text-sm font-semibold uppercase tracking-wider text-primary-foreground transition-colors hover:bg-primary/85"
-            >
-              <MapPin className="h-4 w-4" /> Find a store
-            </a>
-            <a
-              href="https://wa.me/27761964617"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-md border border-foreground/30 px-7 py-3.5 text-sm font-semibold uppercase tracking-wider text-foreground transition-colors hover:border-primary hover:text-primary"
-            >
-              Chat with us
-            </a>
+        </div>
+        <div className="relative h-[420px] w-full md:h-[520px]">
+          <a
+            href="https://www.google.com/maps/search/Marco+Adamo"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open Marco Adamo stores in Google Maps"
+            className="absolute inset-0 block"
+          >
+            <iframe
+              title="Marco Adamo stores on Google Maps"
+              src="https://maps.google.com/maps?q=Marco%20Adamo&t=&z=11&ie=UTF8&iwloc=&output=embed"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="pointer-events-none absolute inset-0 h-full w-full border-0"
+              tabIndex={-1}
+            />
+          </a>
+          <div className="pointer-events-none absolute inset-0 flex items-end p-6 md:p-8">
+            <div className="flex flex-wrap gap-4">
+              <a
+                href="https://www.google.com/maps/search/Marco+Adamo"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="pointer-events-auto inline-flex items-center gap-2 rounded-md bg-primary px-7 py-3.5 text-sm font-semibold uppercase tracking-wider text-primary-foreground shadow-lg transition-colors hover:bg-primary/85"
+              >
+                <MapPin className="h-4 w-4" /> Find a store
+              </a>
+              <a
+                href="https://wa.me/27761964617"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="pointer-events-auto inline-flex items-center gap-2 rounded-md border border-border bg-background/80 px-7 py-3.5 text-sm font-semibold uppercase tracking-wider text-foreground shadow-lg backdrop-blur transition-colors hover:border-primary hover:text-primary"
+              >
+                Chat with us
+              </a>
+            </div>
           </div>
         </div>
-        <a
-          href="https://www.google.com/maps/search/Marco+Adamo"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Open Marco Adamo stores in Google Maps"
-          className="relative block h-[420px] w-full md:h-[520px]"
-        >
-          <iframe
-            title="Marco Adamo stores on Google Maps"
-            src="https://maps.google.com/maps?q=Marco%20Adamo&t=&z=11&ie=UTF8&iwloc=&output=embed"
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            className="pointer-events-none absolute inset-0 h-full w-full border-0"
-            tabIndex={-1}
-          />
-        </a>
       </section>
     </>
   );
