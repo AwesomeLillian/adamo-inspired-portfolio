@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as CoatsRouteImport } from './routes/coats'
 import { Route as CollectionsRouteImport } from './routes/collections'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ShirtsRouteImport } from './routes/shirts'
@@ -25,6 +26,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CoatsRoute = CoatsRouteImport.update({
+  id: '/coats',
+  path: '/coats',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CollectionsRoute = CollectionsRouteImport.update({
@@ -56,6 +62,7 @@ const SuitsRoute = SuitsRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/coats': typeof CoatsRoute
   '/collections': typeof CollectionsRoute
   '/contact': typeof ContactRoute
   '/shirts': typeof ShirtsRoute
@@ -65,6 +72,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/coats': typeof CoatsRoute
   '/collections': typeof CollectionsRoute
   '/contact': typeof ContactRoute
   '/shirts': typeof ShirtsRoute
@@ -75,6 +83,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/coats': typeof CoatsRoute
   '/collections': typeof CollectionsRoute
   '/contact': typeof ContactRoute
   '/shirts': typeof ShirtsRoute
@@ -86,6 +95,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/coats'
     | '/collections'
     | '/contact'
     | '/shirts'
@@ -95,6 +105,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/coats'
     | '/collections'
     | '/contact'
     | '/shirts'
@@ -104,6 +115,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/coats'
     | '/collections'
     | '/contact'
     | '/shirts'
@@ -114,6 +126,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  CoatsRoute: typeof CoatsRoute
   CollectionsRoute: typeof CollectionsRoute
   ContactRoute: typeof ContactRoute
   ShirtsRoute: typeof ShirtsRoute
@@ -135,6 +148,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/coats': {
+      id: '/coats'
+      path: '/coats'
+      fullPath: '/coats'
+      preLoaderRoute: typeof CoatsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/collections': {
@@ -178,6 +198,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  CoatsRoute: CoatsRoute,
   CollectionsRoute: CollectionsRoute,
   ContactRoute: ContactRoute,
   ShirtsRoute: ShirtsRoute,

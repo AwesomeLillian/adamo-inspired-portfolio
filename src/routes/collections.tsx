@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import collectionSuits from "@/assets/collection-suits.jpg";
 import collectionShoes from "@/assets/collection-shoes.jpg";
 import collectionShirts from "@/assets/collection-shirts.jpg";
+import collectionCoats from "@/assets/collection-coats.jpg";
 import collectionAccessories from "@/assets/collection-accessories.jpg";
 
 export const Route = createFileRoute("/collections")({
@@ -50,6 +51,14 @@ const items = [
     image: collectionShirts,
     to: "/shirts" as const,
     alt: "Egyptian cotton formal shirts on wooden hangers",
+  },
+  {
+    title: "Coats",
+    description:
+      "Tailored coats and overcoats — wool and pinstripe cuts that finish a gentleman's wardrobe with authority.",
+    image: collectionCoats,
+    to: "/coats" as const,
+    alt: "Dark pinstripe tailored overcoat with tie",
   },
   {
     title: "Accessories",
