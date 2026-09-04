@@ -82,7 +82,7 @@ function CollectionsPage() {
             Our Collections
           </h1>
           <p className="mt-6 max-w-2xl leading-relaxed text-muted-foreground">
-            Four disciplines, one standard. Every piece in our emporium is
+            Five disciplines, one standard. Every piece in our emporium is
             selected at the source and finished with the care of 35 years of
             experience.
           </p>
