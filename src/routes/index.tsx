@@ -230,15 +230,15 @@ function Index() {
 
       {/* Visit us */}
       <section className="relative overflow-hidden border-t border-border">
-        <img
-          src={storeInterior}
-          alt="Interior of the Marco Adamo boutique with suits and leather chairs"
+        <iframe
+          title="Marco Adamo stores on Google Maps"
+          src="https://maps.google.com/maps?q=Marco%20Adamo&t=&z=11&ie=UTF8&iwloc=&output=embed"
           loading="lazy"
-          width={1280}
-          height={1024}
-          className="absolute inset-0 h-full w-full object-cover"
+          referrerPolicy="no-referrer-when-downgrade"
+          className="absolute inset-0 h-full w-full border-0"
+          allowFullScreen
         />
-        <div className="hero-overlay absolute inset-0" />
+        <div className="hero-overlay pointer-events-none absolute inset-0" />
         <div className="relative mx-auto max-w-7xl px-6 py-28">
           <p className="text-xs font-semibold uppercase tracking-[0.35em] text-primary">
             Come pay us a visit
@@ -251,12 +251,14 @@ function Index() {
             replies within minutes on WhatsApp — or find us at a centre near you.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
-            <Link
-              to="/contact"
+            <a
+              href="https://www.google.com/maps/search/Marco+Adamo"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-md bg-primary px-7 py-3.5 text-sm font-semibold uppercase tracking-wider text-primary-foreground transition-colors hover:bg-primary/85"
             >
               <MapPin className="h-4 w-4" /> Find a store
-            </Link>
+            </a>
             <a
               href="https://wa.me/27761964617"
               target="_blank"
