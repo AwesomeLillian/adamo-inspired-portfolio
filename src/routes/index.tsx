@@ -5,6 +5,7 @@ import heroSuit from "@/assets/hero-suit.jpg";
 import collectionSuits from "@/assets/collection-suits.jpg";
 import collectionShoes from "@/assets/collection-shoes.jpg";
 import collectionShirts from "@/assets/collection-shirts.jpg";
+import collectionCoats from "@/assets/collection-coats.jpg";
 import collectionAccessories from "@/assets/collection-accessories.jpg";
 import diamondCollection from "@/assets/diamond-collection.jpg";
 import aboutTailor from "@/assets/about-tailor.jpg";
@@ -51,6 +52,13 @@ const collections = [
     image: collectionShirts,
     to: "/shirts" as const,
     alt: "Crisp Egyptian cotton formal shirts on hangers",
+  },
+  {
+    title: "Coats",
+    description: "Tailored coats & overcoats",
+    image: collectionCoats,
+    to: "/coats" as const,
+    alt: "Dark pinstripe tailored overcoat with tie",
   },
   {
     title: "Accessories",
@@ -116,7 +124,7 @@ function Index() {
           </Link>
         </div>
 
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
           {collections.map((item) => (
             <Link key={item.title} to={item.to} className="group block">
               <div className="relative aspect-[4/5] overflow-hidden rounded-md border border-border">
