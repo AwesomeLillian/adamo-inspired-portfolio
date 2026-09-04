@@ -237,17 +237,8 @@ function Index() {
       </section>
 
       {/* Visit us */}
-      <section className="relative overflow-hidden border-t border-border">
-        <iframe
-          title="Marco Adamo stores on Google Maps"
-          src="https://maps.google.com/maps?q=Marco%20Adamo&t=&z=11&ie=UTF8&iwloc=&output=embed"
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          className="absolute inset-0 h-full w-full border-0"
-          allowFullScreen
-        />
-        <div className="hero-overlay pointer-events-none absolute inset-0" />
-        <div className="relative mx-auto max-w-7xl px-6 py-28">
+      <section className="border-t border-border">
+        <div className="mx-auto max-w-7xl px-6 pt-24 pb-14">
           <p className="text-xs font-semibold uppercase tracking-[0.35em] text-primary">
             Come pay us a visit
           </p>
@@ -277,6 +268,22 @@ function Index() {
             </a>
           </div>
         </div>
+        <a
+          href="https://www.google.com/maps/search/Marco+Adamo"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open Marco Adamo stores in Google Maps"
+          className="relative block h-[420px] w-full md:h-[520px]"
+        >
+          <iframe
+            title="Marco Adamo stores on Google Maps"
+            src="https://maps.google.com/maps?q=Marco%20Adamo&t=&z=11&ie=UTF8&iwloc=&output=embed"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="pointer-events-none absolute inset-0 h-full w-full border-0"
+            tabIndex={-1}
+          />
+        </a>
       </section>
     </>
   );
