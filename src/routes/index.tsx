@@ -5,6 +5,7 @@ import heroSuit from "@/assets/hero-suit.jpg";
 import collectionSuits from "@/assets/collection-suits.jpg";
 import collectionShoes from "@/assets/collection-shoes.jpg";
 import collectionShirts from "@/assets/collection-shirts.jpg";
+import collectionCoats from "@/assets/collection-coats.jpg";
 import collectionAccessories from "@/assets/collection-accessories.jpg";
 import diamondCollection from "@/assets/diamond-collection.jpg";
 import aboutTailor from "@/assets/about-tailor.jpg";
@@ -51,6 +52,13 @@ const collections = [
     image: collectionShirts,
     to: "/shirts" as const,
     alt: "Crisp Egyptian cotton formal shirts on hangers",
+  },
+  {
+    title: "Coats",
+    description: "Tailored coats & overcoats",
+    image: collectionCoats,
+    to: "/coats" as const,
+    alt: "Dark pinstripe tailored overcoat with tie",
   },
   {
     title: "Accessories",
@@ -116,7 +124,7 @@ function Index() {
           </Link>
         </div>
 
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
           {collections.map((item) => (
             <Link key={item.title} to={item.to} className="group block">
               <div className="relative aspect-[4/5] overflow-hidden rounded-md border border-border">
@@ -229,17 +237,8 @@ function Index() {
       </section>
 
       {/* Visit us */}
-      <section className="relative overflow-hidden border-t border-border">
-        <iframe
-          title="Marco Adamo stores on Google Maps"
-          src="https://maps.google.com/maps?q=Marco%20Adamo&t=&z=11&ie=UTF8&iwloc=&output=embed"
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          className="absolute inset-0 h-full w-full border-0"
-          allowFullScreen
-        />
-        <div className="hero-overlay pointer-events-none absolute inset-0" />
-        <div className="relative mx-auto max-w-7xl px-6 py-28">
+      <section className="border-t border-border">
+        <div className="mx-auto max-w-7xl px-6 pt-24 pb-14">
           <p className="text-xs font-semibold uppercase tracking-[0.35em] text-primary">
             Come pay us a visit
           </p>
@@ -269,6 +268,22 @@ function Index() {
             </a>
           </div>
         </div>
+        <a
+          href="https://www.google.com/maps/search/Marco+Adamo"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open Marco Adamo stores in Google Maps"
+          className="relative block h-[420px] w-full md:h-[520px]"
+        >
+          <iframe
+            title="Marco Adamo stores on Google Maps"
+            src="https://maps.google.com/maps?q=Marco%20Adamo&t=&z=11&ie=UTF8&iwloc=&output=embed"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="pointer-events-none absolute inset-0 h-full w-full border-0"
+            tabIndex={-1}
+          />
+        </a>
       </section>
     </>
   );

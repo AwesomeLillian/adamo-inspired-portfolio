@@ -33,6 +33,7 @@ export function SiteFooter() {
             <li><Link to="/suits" className="transition-colors hover:text-primary">Suits</Link></li>
             <li><Link to="/shoes" className="transition-colors hover:text-primary">Shoes</Link></li>
             <li><Link to="/shirts" className="transition-colors hover:text-primary">Shirts</Link></li>
+            <li><Link to="/coats" className="transition-colors hover:text-primary">Coats</Link></li>
             <li><Link to="/about" className="transition-colors hover:text-primary">About us</Link></li>
           </ul>
         </div>
