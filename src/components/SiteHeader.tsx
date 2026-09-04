@@ -2,6 +2,8 @@ import { Link } from "@tanstack/react-router";
 import { Menu, Search, X } from "lucide-react";
 import { useState } from "react";
 
+import logo from "@/assets/marco-adamo-logo.png";
+
 const navItems = [
   { to: "/", label: "Home" },
   { to: "/collections", label: "Collections" },
@@ -18,14 +20,16 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
-        <Link to="/" className="flex items-center gap-3" aria-label="Marco Adamo home">
-          <span className="flex h-11 w-11 items-center justify-center bg-primary font-logo text-xl font-bold italic text-primary-foreground">
-            MA
-          </span>
-          <span className="font-logo text-2xl font-bold italic lowercase text-primary">
-            marco adamo
-          </span>
+        <Link to="/" className="flex items-center" aria-label="Marco Adamo home">
+          <img
+            src={logo}
+            alt="Marco Adamo"
+            width={500}
+            height={250}
+            className="h-14 w-auto md:h-16"
+          />
         </Link>
+
 
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Main navigation">
           {navItems.map((item) => (
