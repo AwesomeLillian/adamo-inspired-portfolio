@@ -1,19 +1,23 @@
 import { Link } from "@tanstack/react-router";
 import { Clock, MapPin, Phone } from "lucide-react";
 
+import logo from "@/assets/marco-adamo-logo.png";
+
 export function SiteFooter() {
   return (
     <footer className="border-t border-border bg-card">
       <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 md:grid-cols-3">
         <div>
           <div className="flex items-center gap-3">
-            <span className="flex h-10 w-10 items-center justify-center bg-primary font-logo text-lg font-bold italic text-primary-foreground">
-              MA
-            </span>
-            <span className="font-logo text-xl font-bold italic lowercase text-primary">
-              marco adamo
-            </span>
+            <img
+              src={logo}
+              alt="Marco Adamo"
+              width={500}
+              height={250}
+              className="h-14 w-auto"
+            />
           </div>
+
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
             Designer men's clothing, imported for you. Exclusive men's clothing
             emporium — owner managed and run for over 35 years.
