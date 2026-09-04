@@ -8,7 +8,7 @@ import collectionShirts from "@/assets/collection-shirts.jpg";
 import collectionAccessories from "@/assets/collection-accessories.jpg";
 import diamondCollection from "@/assets/diamond-collection.jpg";
 import aboutTailor from "@/assets/about-tailor.jpg";
-import storeInterior from "@/assets/store-interior.jpg";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
