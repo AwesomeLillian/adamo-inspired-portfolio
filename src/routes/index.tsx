@@ -110,7 +110,7 @@ function Index() {
         <div className="flex items-end justify-between gap-6">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.35em] text-primary">
-              Our Collection
+              Our Diamond Collection
             </p>
             <h2 className="mt-4 font-display text-3xl font-extrabold uppercase tracking-tight text-foreground md:text-5xl">
               Crafted for the gentleman
@@ -164,7 +164,7 @@ function Index() {
           </div>
           <div>
             <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.35em] text-primary">
-              <Diamond className="h-4 w-4" /> Diamond Collection
+              <Diamond className="h-4 w-4" /> our collection
             </p>
             <h2 className="mt-4 font-display text-3xl font-extrabold uppercase tracking-tight text-foreground md:text-5xl">
               Our signature standard
@@ -268,7 +268,7 @@ function Index() {
               tabIndex={-1}
             />
           </a>
-          <div className="pointer-events-none absolute inset-0 flex items-end p-6 md:p-8">
+          <div className="pointer-events-none absolute inset-0 flex items-end p-6 pb-16 md:p-8 md:pb-20">
             <div className="flex flex-wrap gap-4">
               <a
                 href="https://www.google.com/maps/search/Marco+Adamo"

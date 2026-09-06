@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Clock, MapPin, Phone } from "lucide-react";
+import { Clock, Facebook, Instagram, MapPin, Phone } from "lucide-react";
 
 import logo from "@/assets/marco-adamo-logo.png";
 
@@ -22,6 +22,27 @@ export function SiteFooter() {
             Designer men's clothing, imported for you. Exclusive men's clothing
             emporium — owner managed and run for over 35 years.
           </p>
+
+          <div className="mt-5 flex items-center gap-3">
+            <a
+              href="https://www.facebook.com/Marco-Adamo-Collezioni-259809020760711"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Marco Adamo on Facebook"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+            >
+              <Facebook className="h-4 w-4" />
+            </a>
+            <a
+              href="https://www.instagram.com/marcoadamocollezioni/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Marco Adamo on Instagram"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+            >
+              <Instagram className="h-4 w-4" />
+            </a>
+          </div>
         </div>
 
         <div>
@@ -68,7 +89,7 @@ export function SiteFooter() {
 
       <div className="border-t border-border">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-6 py-5 text-xs text-muted-foreground sm:flex-row">
-          <p>© {new Date().getFullYear()} Marco Adamo. All rights reserved.</p>
+          <p>© 2022 Marco Adamo. All rights reserved.</p>
           <p className="uppercase tracking-widest">Essence of Elegance</p>
         </div>
       </div>
