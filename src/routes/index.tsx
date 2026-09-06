@@ -110,7 +110,7 @@ function Index() {
         <div className="flex items-end justify-between gap-6">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.35em] text-primary">
-              Our Collection
+              Our Diamond Collection
             </p>
             <h2 className="mt-4 font-display text-3xl font-extrabold uppercase tracking-tight text-foreground md:text-5xl">
               Crafted for the gentleman
