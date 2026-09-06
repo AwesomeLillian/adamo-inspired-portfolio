@@ -89,7 +89,7 @@ export function SiteFooter() {
 
       <div className="border-t border-border">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-6 py-5 text-xs text-muted-foreground sm:flex-row">
-          <p>© {new Date().getFullYear()} Marco Adamo. All rights reserved.</p>
+          <p>© 2022 Marco Adamo. All rights reserved.</p>
           <p className="uppercase tracking-widest">Essence of Elegance</p>
         </div>
       </div>
