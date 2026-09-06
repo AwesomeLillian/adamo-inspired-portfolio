@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Clock, MapPin, Phone } from "lucide-react";
+import { Clock, Facebook, Instagram, MapPin, Phone } from "lucide-react";
 
 import logo from "@/assets/marco-adamo-logo.png";
 
