@@ -268,7 +268,7 @@ function Index() {
               tabIndex={-1}
             />
           </a>
-          <div className="pointer-events-none absolute inset-0 flex items-end p-6 md:p-8">
+          <div className="pointer-events-none absolute inset-0 flex items-end p-6 pb-16 md:p-8 md:pb-20">
             <div className="flex flex-wrap gap-4">
               <a
                 href="https://www.google.com/maps/search/Marco+Adamo"
