@@ -1,6 +1,6 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useNavigate } from "@tanstack/react-router";
 import { Menu, Search, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import logo from "@/assets/marco-adamo-logo.png";
 
@@ -17,6 +17,26 @@ const navItems = [
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [query, setQuery] = useState("");
+  const searchInputRef = useRef<HTMLInputElement>(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (searchOpen) searchInputRef.current?.focus();
+  }, [searchOpen]);
+
+  const results = query.trim()
+    ? navItems.filter((item) =>
+        item.label.toLowerCase().includes(query.trim().toLowerCase()),
+      )
+    : navItems;
+
+  const goTo = (to: string) => {
+    setSearchOpen(false);
+    setQuery("");
+    navigate({ to });
+  };
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur">
@@ -31,43 +51,31 @@ export function SiteHeader() {
           />
         </Link>
 
-
-        <nav className="hidden items-center gap-8 lg:flex" aria-label="Main navigation">
-          {navItems.map((item) => (
-            <Link
-              key={item.to}
-              to={item.to}
-              activeOptions={{ exact: item.to === "/" }}
-              className="text-sm font-medium tracking-wide text-foreground/80 transition-colors hover:text-primary"
-              activeProps={{ className: "text-primary" }}
-            >
-              {item.label}
-            </Link>
-          ))}
+        <div className="flex items-center gap-4">
           <button
             type="button"
             aria-label="Search"
+            onClick={() => setSearchOpen(true)}
             className="text-foreground/80 transition-colors hover:text-primary"
           >
             <Search className="h-5 w-5" />
           </button>
-        </nav>
-
-        <button
-          type="button"
-          className="text-foreground lg:hidden"
-          onClick={() => setOpen((v) => !v)}
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-        >
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+          <button
+            type="button"
+            className="text-foreground"
+            onClick={() => setOpen((v) => !v)}
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+          >
+            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
       </div>
 
       {open && (
         <nav
-          className="border-t border-border bg-background px-6 py-4 lg:hidden"
-          aria-label="Mobile navigation"
+          className="absolute right-0 top-full w-full max-w-xs border-b border-l border-border bg-background px-6 py-4 shadow-2xl"
+          aria-label="Site navigation"
         >
           <ul className="flex flex-col gap-1">
             {navItems.map((item) => (
@@ -85,6 +93,63 @@ export function SiteHeader() {
             ))}
           </ul>
         </nav>
+      )}
+
+      {searchOpen && (
+        <div
+          className="fixed inset-0 z-50 bg-background/80 backdrop-blur-sm"
+          onClick={() => setSearchOpen(false)}
+        >
+          <div
+            className="mx-auto mt-24 w-full max-w-xl px-6"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center gap-3 border-b-2 border-primary pb-3">
+              <Search className="h-6 w-6 text-primary" />
+              <input
+                ref={searchInputRef}
+                type="search"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Search collections, suits, shoes..."
+                className="w-full bg-transparent text-xl text-foreground outline-none placeholder:text-muted-foreground"
+                aria-label="Search the site"
+                onKeyDown={(e) => {
+                  if (e.key === "Escape") setSearchOpen(false);
+                  if (e.key === "Enter" && results.length > 0) goTo(results[0].to);
+                }}
+              />
+              <button
+                type="button"
+                aria-label="Close search"
+                onClick={() => setSearchOpen(false)}
+                className="text-foreground/70 transition-colors hover:text-primary"
+              >
+                <X className="h-6 w-6" />
+              </button>
+            </div>
+            <ul className="mt-4 divide-y divide-border rounded-md border border-border bg-card">
+              {results.length === 0 ? (
+                <li className="px-4 py-3 text-sm text-muted-foreground">
+                  No results for "{query}"
+                </li>
+              ) : (
+                results.map((item) => (
+                  <li key={item.to}>
+                    <button
+                      type="button"
+                      onClick={() => goTo(item.to)}
+                      className="flex w-full items-center justify-between px-4 py-3 text-left text-sm font-medium text-foreground/80 transition-colors hover:bg-accent hover:text-primary"
+                    >
+                      {item.label}
+                      <Search className="h-4 w-4 text-muted-foreground" />
+                    </button>
+                  </li>
+                ))
+              )}
+            </ul>
+          </div>
+        </div>
       )}
     </header>
   );
