@@ -22,6 +22,27 @@ export function SiteFooter() {
             Designer men's clothing, imported for you. Exclusive men's clothing
             emporium — owner managed and run for over 35 years.
           </p>
+
+          <div className="mt-5 flex items-center gap-3">
+            <a
+              href="https://www.facebook.com/Marco-Adamo-Collezioni-259809020760711"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Marco Adamo on Facebook"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+            >
+              <Facebook className="h-4 w-4" />
+            </a>
+            <a
+              href="https://www.instagram.com/marcoadamocollezioni/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Marco Adamo on Instagram"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+            >
+              <Instagram className="h-4 w-4" />
+            </a>
+          </div>
         </div>
 
         <div>
