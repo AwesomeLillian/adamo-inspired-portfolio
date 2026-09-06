@@ -164,7 +164,7 @@ function Index() {
           </div>
           <div>
             <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.35em] text-primary">
-              <Diamond className="h-4 w-4" /> Diamond Collection
+              <Diamond className="h-4 w-4" /> our collection
             </p>
             <h2 className="mt-4 font-display text-3xl font-extrabold uppercase tracking-tight text-foreground md:text-5xl">
               Our signature standard
