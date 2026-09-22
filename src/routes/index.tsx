@@ -34,21 +34,21 @@ const collections = [
     title: "Classic Shoes",
     description: "Polished formal leather shoes",
     image: collectionShoes,
-    to: "/shoes" as const,
+    to: "/classic-shoes" as const,
     alt: "Polished black classic leather shoes",
   },
   {
     title: "Casual Shoes",
     description: "Refined comfort for every day",
     image: casualShoes,
-    to: "/shoes" as const,
+    to: "/casual-shoes" as const,
     alt: "Cognac brown casual leather shoes",
   },
   {
     title: "Belts",
     description: "Leather belts to complete the look",
     image: collectionAccessories,
-    to: "/shoes" as const,
+    to: "/belts" as const,
     alt: "Classic leather belt and accessories",
   },
 ];
@@ -160,9 +160,9 @@ function Index() {
             </p>
             <ul className="mt-8 space-y-4">
               {[
-                { title: "Classic Shoes", text: "Polished styles for formal occasions", to: "/shoes" as const },
-                { title: "Casual Shoes", text: "Refined comfort for every day", to: "/shoes" as const },
-                { title: "Belts", text: "Leather finishes for a complete look", to: "/shoes" as const },
+                { title: "Classic Shoes", text: "Polished styles for formal occasions", to: "/classic-shoes" as const },
+                { title: "Casual Shoes", text: "Refined comfort for every day", to: "/casual-shoes" as const },
+                { title: "Belts", text: "Leather finishes for a complete look", to: "/belts" as const },
               ].map((row) => (
                 <li key={row.title}>
                   <Link

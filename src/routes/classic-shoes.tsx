@@ -2,18 +2,17 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Check } from "lucide-react";
 
 import collectionShoes from "@/assets/collection-shoes.jpg";
-import collectionAccessories from "@/assets/collection-accessories.jpg";
 
 export const Route = createFileRoute("/classic-shoes")({
   head: () => ({
     meta: [
-      { title: "Genuine Leather Shoes — Marco Adamo" },
+      { title: "Classic Shoes — Marco Adamo" },
       {
         name: "description",
         content:
           "Genuine leather formal shoes at Marco Adamo — oxfords, derbies and loafers, hand-finished and built to last.",
       },
-      { property: "og:title", content: "Genuine Leather Shoes — Marco Adamo" },
+      { property: "og:title", content: "Classic Shoes — Marco Adamo" },
       {
         property: "og:description",
         content: "Genuine leather formal shoes, hand-finished and built to last.",
@@ -30,7 +29,7 @@ const features = [
   "Goodyear-welted and stitched soles",
   "Oxfords, derbies, loafers and monk straps",
   "Classic black, chestnut and oxblood",
-  "Matching formal belts available",
+  "Hand-finished for a polished formal look",
 ];
 
 function ShoesPage() {
@@ -47,14 +46,14 @@ function ShoesPage() {
         <div className="hero-overlay absolute inset-0" />
         <div className="relative mx-auto w-full max-w-7xl px-6 py-24">
           <p className="text-xs font-semibold uppercase tracking-[0.35em] text-primary">
-            The Collection
+            The Classic Collection
           </p>
           <h1 className="mt-4 font-display text-4xl font-black uppercase tracking-tight text-foreground md:text-6xl">
-            Shoes
+            Classic Shoes
           </h1>
           <p className="mt-6 max-w-xl leading-relaxed text-muted-foreground">
-            Genuine leather shoes, hand-finished and polished to a mirror
-            shine. The foundation of every gentleman's wardrobe.
+            Timeless formal shoes in genuine leather, selected for refined
+            occasions and a confident, polished finish.
           </p>
         </div>
       </section>
@@ -62,8 +61,8 @@ function ShoesPage() {
       <section className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 lg:grid-cols-2">
         <div className="order-2 overflow-hidden rounded-md border border-border lg:order-1">
           <img
-            src={collectionAccessories}
-            alt="Formal accessories including a leather belt to match your shoes"
+            src={collectionShoes}
+            alt="Classic black leather shoes from Marco Adamo"
             loading="lazy"
             width={1024}
             height={1024}
@@ -105,21 +104,21 @@ function ShoesPage() {
               Step up to the full collection
             </h2>
             <p className="mt-2 text-sm text-muted-foreground">
-              Explore classic shoes, casual shoes and leather belts.
+               Continue with relaxed footwear or complete the look with a leather belt.
             </p>
           </div>
           <div className="flex gap-3">
             <Link
-              to="/collections"
+              to="/casual-shoes"
               className="rounded-md border border-foreground/30 px-6 py-3 text-sm font-semibold uppercase tracking-wider text-foreground transition-colors hover:border-primary hover:text-primary"
             >
-              View Collection
+              Casual Shoes
             </Link>
             <Link
-              to="/contact"
+              to="/belts"
               className="rounded-md border border-foreground/30 px-6 py-3 text-sm font-semibold uppercase tracking-wider text-foreground transition-colors hover:border-primary hover:text-primary"
             >
-              Visit Us
+              View Belts
             </Link>
           </div>
         </div>
