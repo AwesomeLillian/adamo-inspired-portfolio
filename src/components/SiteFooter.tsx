@@ -51,7 +51,9 @@ export function SiteFooter() {
           </h3>
           <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
             <li><Link to="/collections" className="transition-colors hover:text-primary">Shoes Collection</Link></li>
-            <li><Link to="/shoes" className="transition-colors hover:text-primary">Shoes</Link></li>
+            <li><Link to="/classic-shoes" className="transition-colors hover:text-primary">Classic Shoes</Link></li>
+            <li><Link to="/casual-shoes" className="transition-colors hover:text-primary">Casual Shoes</Link></li>
+            <li><Link to="/belts" className="transition-colors hover:text-primary">Belts</Link></li>
             <li><Link to="/about" className="transition-colors hover:text-primary">About us</Link></li>
           </ul>
         </div>
