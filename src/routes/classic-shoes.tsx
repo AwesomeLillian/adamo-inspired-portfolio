@@ -4,7 +4,7 @@ import { Check } from "lucide-react";
 import collectionShoes from "@/assets/collection-shoes.jpg";
 import collectionAccessories from "@/assets/collection-accessories.jpg";
 
-export const Route = createFileRoute("/shoes")({
+export const Route = createFileRoute("/classic-shoes")({
   head: () => ({
     meta: [
       { title: "Genuine Leather Shoes — Marco Adamo" },
