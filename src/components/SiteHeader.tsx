@@ -3,14 +3,12 @@ import { Menu, Search, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 import logo from "@/assets/marco-adamo-logo.png";
+import { Button } from "@/components/ui/button";
 
 const navItems = [
   { to: "/", label: "Home" },
-  { to: "/collections", label: "Collections" },
-  { to: "/suits", label: "Suits" },
+  { to: "/collections", label: "Shoes Collection" },
   { to: "/shoes", label: "Shoes" },
-  { to: "/shirts", label: "Shirts" },
-  { to: "/coats", label: "Coats" },
   { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
 ] as const;
@@ -26,10 +24,15 @@ export function SiteHeader() {
     if (searchOpen) searchInputRef.current?.focus();
   }, [searchOpen]);
 
-  const results = query.trim()
-    ? navItems.filter((item) =>
-        item.label.toLowerCase().includes(query.trim().toLowerCase()),
-      )
+  const normalizedQuery = query.trim().toLowerCase();
+  const results = normalizedQuery
+    ? navItems
+        .filter((item) => item.label.toLowerCase().includes(normalizedQuery))
+        .sort((a, b) => {
+          const aExact = a.label.toLowerCase() === normalizedQuery;
+          const bExact = b.label.toLowerCase() === normalizedQuery;
+          return Number(bExact) - Number(aExact);
+        })
     : navItems;
 
   const goTo = (to: string) => {
@@ -52,23 +55,27 @@ export function SiteHeader() {
         </Link>
 
         <div className="flex items-center gap-4">
-          <button
+          <Button
             type="button"
+            variant="ghost"
+            size="icon"
             aria-label="Search"
             onClick={() => setSearchOpen(true)}
-            className="text-foreground/80 transition-colors hover:text-primary"
+            className="text-foreground/80 hover:text-primary"
           >
             <Search className="h-5 w-5" />
-          </button>
-          <button
+          </Button>
+          <Button
             type="button"
-            className="text-foreground"
+            variant="ghost"
+            size="icon"
+            className="text-foreground hover:text-primary"
             onClick={() => setOpen((v) => !v)}
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
           >
             {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+          </Button>
         </div>
       </div>
 
@@ -111,7 +118,7 @@ export function SiteHeader() {
                 type="search"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search collections, suits, shoes..."
+                placeholder="Search shoes, belts, contact..."
                 className="w-full bg-transparent text-xl text-foreground outline-none placeholder:text-muted-foreground"
                 aria-label="Search the site"
                 onKeyDown={(e) => {
@@ -119,14 +126,16 @@ export function SiteHeader() {
                   if (e.key === "Enter" && results.length > 0) goTo(results[0].to);
                 }}
               />
-              <button
+              <Button
                 type="button"
+                variant="ghost"
+                size="icon"
                 aria-label="Close search"
                 onClick={() => setSearchOpen(false)}
-                className="text-foreground/70 transition-colors hover:text-primary"
+                className="text-foreground/70 hover:text-primary"
               >
                 <X className="h-6 w-6" />
-              </button>
+              </Button>
             </div>
             <ul className="mt-4 divide-y divide-border rounded-md border border-border bg-card">
               {results.length === 0 ? (
@@ -136,14 +145,15 @@ export function SiteHeader() {
               ) : (
                 results.map((item) => (
                   <li key={item.to}>
-                    <button
+                    <Button
                       type="button"
+                      variant="ghost"
                       onClick={() => goTo(item.to)}
-                      className="flex w-full items-center justify-between px-4 py-3 text-left text-sm font-medium text-foreground/80 transition-colors hover:bg-accent hover:text-primary"
+                      className="h-auto w-full justify-between rounded-none px-4 py-3 text-left text-sm font-medium text-foreground/80 hover:text-primary"
                     >
                       {item.label}
                       <Search className="h-4 w-4 text-muted-foreground" />
-                    </button>
+                    </Button>
                   </li>
                 ))
               )}

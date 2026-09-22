@@ -10,13 +10,15 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "Designer men's clothing imported for you. Over 35 years of experience, owner managed and run — Marco Adamo, exclusive men's clothing emporium.",
+          "Discover the story behind Marco Adamo footwear, owner managed and serving Johannesburg for over 35 years.",
       },
       { property: "og:title", content: "About Us — Marco Adamo" },
       {
         property: "og:description",
-        content: "Over 35 years of imported designer menswear, owner managed and run.",
+        content: "Over 35 years of quality footwear and personal service in Johannesburg.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: AboutPage,
@@ -31,7 +33,7 @@ function AboutPage() {
             Since the beginning
           </p>
           <h1 className="mt-4 max-w-3xl font-display text-4xl font-black uppercase tracking-tight text-foreground md:text-6xl">
-            Designer men's clothing, imported for you
+            Quality footwear, selected for you
           </h1>
         </div>
       </section>
@@ -51,19 +53,17 @@ function AboutPage() {
             Over 35 years at the measure
           </h2>
           <p className="mt-6 leading-relaxed text-muted-foreground">
-            With over 35 years of experience, owner managed and run, Marco
-            Adamo — exclusive men's clothing emporium — is conveniently located
-            at a centre near you.
+             With over 35 years of experience, Marco Adamo is owner managed and
+             committed to personal service at Fourways Mall.
           </p>
           <p className="mt-4 leading-relaxed text-muted-foreground">
-            We import designer menswear directly from Italy and finish every
-            fitting by hand. No seasons chased, no shortcuts taken — only
-            garments made with the highest-quality materials and the patience
-            to get the fit right.
+             Our collection brings together polished formal shoes, comfortable
+             casual styles and leather belts. Every piece is selected for its
+             quality, versatility and enduring appeal.
           </p>
           <blockquote className="mt-8 border-l-2 border-primary pl-6">
             <p className="font-logo text-2xl italic text-foreground">
-              "The quality of our suits is second to none."
+              "Style begins from the ground up."
             </p>
           </blockquote>
         </div>
@@ -76,10 +76,9 @@ function AboutPage() {
               An emporium, not a shop
             </h2>
             <p className="mt-6 leading-relaxed text-muted-foreground">
-              Step inside and you'll find rails of imported suits, genuine
-              leather shoes, 2ply Egyptian cotton shirts and the accessories to
-              finish the look — plus a team that has dressed generations of
-              South African gentlemen.
+               Step inside and you'll find classic leather shoes, versatile
+               casual pairs and matching belts — plus a team ready to help you
+               find the right fit and finish.
             </p>
             <Link
               to="/contact"

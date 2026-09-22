@@ -18,6 +18,8 @@ export const Route = createFileRoute("/shoes")({
         property: "og:description",
         content: "Genuine leather formal shoes, hand-finished and built to last.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: ShoesPage,
@@ -73,8 +75,8 @@ function ShoesPage() {
             Leather that earns its shine
           </h2>
           <p className="mt-6 leading-relaxed text-muted-foreground">
-            A suit is only as strong as the shoes beneath it. Our range is
-            sourced for leather quality first — then last, stitching and sole —
+            A great look starts with the shoes beneath it. Our range is sourced
+            for leather quality first — then last, stitching and sole —
             so each pair ages with character rather than wearing out.
           </p>
           <ul className="mt-8 space-y-3">
@@ -103,21 +105,21 @@ function ShoesPage() {
               Step up to the full collection
             </h2>
             <p className="mt-2 text-sm text-muted-foreground">
-              Explore our imported Italian suits and Egyptian cotton shirts.
+              Explore classic shoes, casual shoes and leather belts.
             </p>
           </div>
           <div className="flex gap-3">
             <Link
-              to="/suits"
+              to="/collections"
               className="rounded-md border border-foreground/30 px-6 py-3 text-sm font-semibold uppercase tracking-wider text-foreground transition-colors hover:border-primary hover:text-primary"
             >
-              Suits
+              View Collection
             </Link>
             <Link
-              to="/shirts"
+              to="/contact"
               className="rounded-md border border-foreground/30 px-6 py-3 text-sm font-semibold uppercase tracking-wider text-foreground transition-colors hover:border-primary hover:text-primary"
             >
-              Shirts
+              Visit Us
             </Link>
           </div>
         </div>

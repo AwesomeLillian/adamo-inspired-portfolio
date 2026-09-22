@@ -1,31 +1,29 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Diamond, MapPin } from "lucide-react";
 
-import heroSuit from "@/assets/hero-suit.jpg";
-import collectionSuits from "@/assets/collection-suits.jpg";
 import collectionShoes from "@/assets/collection-shoes.jpg";
-import collectionShirts from "@/assets/collection-shirts.jpg";
-import collectionCoats from "@/assets/collection-coats.jpg";
 import collectionAccessories from "@/assets/collection-accessories.jpg";
-import diamondCollection from "@/assets/diamond-collection.jpg";
-import aboutTailor from "@/assets/about-tailor.jpg";
+import casualShoes from "@/assets/collection-casual-shoes.jpg";
+import storefrontAsset from "@/assets/marco-adamo-storefront.jpg.asset.json";
 
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Marco Adamo — Essence of Elegance | Italian Suits, Shoes & Shirts" },
+      { title: "Marco Adamo — Classic & Casual Shoes in Johannesburg" },
       {
         name: "description",
         content:
-          "The quality of our suits is second to none. Imported Italian suits, genuine leather shoes and 2ply Egyptian cotton shirts at Marco Adamo.",
+          "Discover Marco Adamo classic shoes, casual shoes and leather belts at Fourways Mall, Johannesburg.",
       },
       { property: "og:title", content: "Marco Adamo — Essence of Elegance" },
       {
         property: "og:description",
         content:
-          "Imported Italian suits, genuine leather shoes and Egyptian cotton shirts. Find your best suit.",
+          "Classic shoes, casual shoes and leather belts selected for enduring style.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Index,
@@ -33,39 +31,25 @@ export const Route = createFileRoute("/")({
 
 const collections = [
   {
-    title: "Suits",
-    description: "Imported Italian suits",
-    image: collectionSuits,
-    to: "/suits" as const,
-    alt: "Man wearing a tailored imported Italian suit",
-  },
-  {
-    title: "Shoes",
-    description: "Genuine leather shoes",
+    title: "Classic Shoes",
+    description: "Polished formal leather shoes",
     image: collectionShoes,
     to: "/shoes" as const,
-    alt: "Polished black genuine leather formal shoes",
+    alt: "Polished black classic leather shoes",
   },
   {
-    title: "Shirts",
-    description: "2ply Egyptian cotton shirts",
-    image: collectionShirts,
-    to: "/shirts" as const,
-    alt: "Crisp Egyptian cotton formal shirts on hangers",
+    title: "Casual Shoes",
+    description: "Refined comfort for every day",
+    image: casualShoes,
+    to: "/shoes" as const,
+    alt: "Cognac brown casual leather shoes",
   },
   {
-    title: "Coats",
-    description: "Tailored coats & overcoats",
-    image: collectionCoats,
-    to: "/coats" as const,
-    alt: "Dark pinstripe tailored overcoat with tie",
-  },
-  {
-    title: "Accessories",
-    description: "Belts, ties & finishing touches",
+    title: "Belts",
+    description: "Leather belts to complete the look",
     image: collectionAccessories,
-    to: "/collections" as const,
-    alt: "Men's formal accessories — belt, tie, cufflinks and watch",
+    to: "/shoes" as const,
+    alt: "Classic leather belt and accessories",
   },
 ];
 
@@ -75,8 +59,8 @@ function Index() {
       {/* Hero */}
       <section className="relative flex min-h-[85vh] items-center overflow-hidden">
         <img
-          src={heroSuit}
-          alt="Tailored dark Italian suit with tie and pocket square"
+          src={storefrontAsset.url}
+          alt="Marco Adamo storefront at Fourways Mall"
           className="absolute inset-0 h-full w-full object-cover"
           width={1920}
           height={1080}
@@ -84,14 +68,14 @@ function Index() {
         <div className="hero-overlay absolute inset-0" />
         <div className="relative mx-auto w-full max-w-7xl px-6 py-24">
           <p className="fade-up text-xs font-semibold uppercase tracking-[0.35em] text-primary">
-            Designer Men's Clothing — Imported For You
+            Footwear for every occasion
           </p>
           <h1 className="fade-up mt-6 max-w-3xl font-display text-5xl font-black uppercase leading-[1.02] tracking-tight text-foreground md:text-7xl">
             Essence of Elegance
           </h1>
           <p className="fade-up mt-6 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
-            The quality of our suits is second to none, and they're made with
-            only the highest-quality materials.
+            From polished classics to relaxed everyday pairs, discover quality
+            footwear selected to finish every look with confidence.
           </p>
           <div className="fade-up mt-10">
             <Link
@@ -99,7 +83,7 @@ function Index() {
               className="inline-flex items-center gap-2 rounded-md bg-primary px-7 py-3.5 text-sm font-semibold uppercase tracking-wider text-primary-foreground transition-colors hover:bg-primary/85"
             >
               <Diamond className="h-4 w-4" />
-              Find your best Suit
+              Find your perfect pair
             </Link>
           </div>
         </div>
@@ -110,7 +94,7 @@ function Index() {
         <div className="flex items-end justify-between gap-6">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.35em] text-primary">
-              Our Diamond Collection
+              Our Shoes Collection
             </p>
             <h2 className="mt-4 font-display text-3xl font-extrabold uppercase tracking-tight text-foreground md:text-5xl">
               Crafted for the gentleman
@@ -124,7 +108,7 @@ function Index() {
           </Link>
         </div>
 
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 md:grid-cols-3">
           {collections.map((item) => (
             <Link key={item.title} to={item.to} className="group block">
               <div className="relative aspect-[4/5] overflow-hidden rounded-md border border-border">
@@ -154,8 +138,8 @@ function Index() {
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 lg:grid-cols-2">
           <div className="overflow-hidden rounded-md border border-border">
             <img
-              src={diamondCollection}
-              alt="Man in a black tuxedo adjusting his cufflink under a spotlight"
+              src={casualShoes}
+              alt="Cognac casual leather shoes from Marco Adamo"
               loading="lazy"
               width={1280}
               height={1024}
@@ -170,16 +154,15 @@ function Index() {
               Our signature standard
             </h2>
             <p className="mt-6 max-w-lg leading-relaxed text-muted-foreground">
-              The Diamond Collection is the pinnacle of the Marco Adamo range —
-              our most exacting selection of tailoring, footwear and shirting,
-              curated for the man who accepts nothing less than perfection.
+               The Marco Adamo collection brings together enduring formal styles,
+               relaxed everyday footwear and leather belts selected to complete
+               every look.
             </p>
             <ul className="mt-8 space-y-4">
               {[
-                { title: "Suits", text: "Imported Italian suits, cut to flatter", to: "/suits" as const },
-                { title: "Shoes", text: "Genuine leather, finished by hand", to: "/shoes" as const },
-                { title: "Shirts", text: "2ply Egyptian cotton", to: "/shirts" as const },
-                { title: "Coats", text: "Tailored coats & overcoats", to: "/coats" as const },
+                { title: "Classic Shoes", text: "Polished styles for formal occasions", to: "/shoes" as const },
+                { title: "Casual Shoes", text: "Refined comfort for every day", to: "/shoes" as const },
+                { title: "Belts", text: "Leather finishes for a complete look", to: "/shoes" as const },
               ].map((row) => (
                 <li key={row.title}>
                   <Link
@@ -211,12 +194,11 @@ function Index() {
             About Us
           </p>
           <h2 className="mt-4 font-display text-3xl font-extrabold uppercase tracking-tight text-foreground md:text-4xl">
-            "Designer men's clothing imported for you"
+            "Quality footwear, selected for you"
           </h2>
           <p className="mt-6 max-w-lg leading-relaxed text-muted-foreground">
-            With over 35 years of experience, owner managed and run, Marco
-            Adamo — exclusive men's clothing emporium — is conveniently located
-            at a centre near you.
+             With over 35 years of experience, Marco Adamo brings personal
+             service and carefully selected footwear to Fourways Mall.
           </p>
           <Link
             to="/about"
@@ -227,8 +209,8 @@ function Index() {
         </div>
         <div className="order-1 overflow-hidden rounded-md border border-border lg:order-2">
           <img
-            src={aboutTailor}
-            alt="Master tailor measuring fine suit fabric in the atelier"
+            src={storefrontAsset.url}
+            alt="The Marco Adamo shoe boutique at Fourways Mall"
             loading="lazy"
             width={1024}
             height={1280}
@@ -247,8 +229,8 @@ function Index() {
             Experience the emporium in person
           </h2>
           <p className="mt-6 max-w-lg leading-relaxed text-muted-foreground">
-            Step into our boutique for a personal fitting. Our team typically
-            replies within minutes on WhatsApp — or find us at a centre near you.
+             Step into our boutique to find your ideal fit. Our team typically
+             replies within minutes on WhatsApp — or visit us at Fourways Mall.
           </p>
         </div>
         <div className="relative h-[420px] w-full md:h-[520px]">

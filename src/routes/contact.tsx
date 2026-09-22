@@ -10,13 +10,15 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Come pay us a visit. Marco Adamo is conveniently located at a centre near you — or chat with us on WhatsApp, we typically reply in minutes.",
+          "Visit Marco Adamo opposite Truworths Men on Level 5 at Fourways Mall, Johannesburg, or chat with us on WhatsApp.",
       },
       { property: "og:title", content: "Contact & Stores — Marco Adamo" },
       {
         property: "og:description",
-        content: "Find a Marco Adamo store near you or chat with us on WhatsApp.",
+        content: "Find Marco Adamo at Fourways Mall or chat with us on WhatsApp.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: ContactPage,
@@ -42,8 +44,8 @@ function ContactPage() {
             Come pay us a visit
           </h1>
           <p className="mt-6 max-w-xl leading-relaxed text-muted-foreground">
-            Marco Adamo is conveniently located at a centre near you. Walk in
-            for a fitting — or start the conversation on WhatsApp.
+             Find us opposite Truworths Men on Level 5 at Fourways Mall. Visit
+             for the right fit — or start the conversation on WhatsApp.
           </p>
         </div>
       </section>
@@ -56,8 +58,7 @@ function ContactPage() {
               Visit
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              Exclusive men's clothing emporium, conveniently located at a
-              centre near you in Johannesburg.
+               Level 5 Opposite Truworths Men, Fourways Mall, Johannesburg.
             </p>
           </div>
           <div className="rounded-md border border-border bg-card p-8">

@@ -1,27 +1,27 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 
-import collectionSuits from "@/assets/collection-suits.jpg";
 import collectionShoes from "@/assets/collection-shoes.jpg";
-import collectionShirts from "@/assets/collection-shirts.jpg";
-import collectionCoats from "@/assets/collection-coats.jpg";
 import collectionAccessories from "@/assets/collection-accessories.jpg";
+import casualShoes from "@/assets/collection-casual-shoes.jpg";
 
 export const Route = createFileRoute("/collections")({
   head: () => ({
     meta: [
-      { title: "Collections — Marco Adamo" },
+      { title: "Shoes Collection — Marco Adamo" },
       {
         name: "description",
         content:
-          "Browse the Marco Adamo collections: imported Italian suits, genuine leather shoes, 2ply Egyptian cotton shirts and formal accessories.",
+          "Browse Marco Adamo classic shoes, casual shoes and leather belts at Fourways Mall, Johannesburg.",
       },
-      { property: "og:title", content: "Collections — Marco Adamo" },
+      { property: "og:title", content: "Shoes Collection — Marco Adamo" },
       {
         property: "og:description",
         content:
-          "Imported Italian suits, genuine leather shoes, Egyptian cotton shirts and formal accessories.",
+          "Discover classic shoes, casual shoes and leather belts from Marco Adamo.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: CollectionsPage,
@@ -29,44 +29,25 @@ export const Route = createFileRoute("/collections")({
 
 const items = [
   {
-    title: "Suits",
-    description:
-      "Imported Italian suits — half-canvas construction, Super 150s wool, tailored to the millimetre.",
-    image: collectionSuits,
-    to: "/suits" as const,
-    alt: "Man in a tailored Italian suit inside the boutique",
-  },
-  {
-    title: "Shoes",
-    description:
-      "Genuine leather shoes — hand-welted, vegetable-tanned and polished to a mirror shine.",
+    title: "Classic Shoes",
+    description: "Polished formal leather shoes with timeless lines and a confident finish.",
     image: collectionShoes,
     to: "/shoes" as const,
-    alt: "Polished black genuine leather oxford shoes",
+    alt: "Polished black classic leather shoes",
   },
   {
-    title: "Shirts",
-    description:
-      "2ply Egyptian cotton shirts — crisp, breathable and finished with mother-of-pearl buttons.",
-    image: collectionShirts,
-    to: "/shirts" as const,
-    alt: "Egyptian cotton formal shirts on wooden hangers",
+    title: "Casual Shoes",
+    description: "Refined leather footwear made for comfort beyond formal occasions.",
+    image: casualShoes,
+    to: "/shoes" as const,
+    alt: "Cognac brown casual leather shoes",
   },
   {
-    title: "Coats",
-    description:
-      "Tailored coats and overcoats — wool and pinstripe cuts that finish a gentleman's wardrobe with authority.",
-    image: collectionCoats,
-    to: "/coats" as const,
-    alt: "Dark pinstripe tailored overcoat with tie",
-  },
-  {
-    title: "Accessories",
-    description:
-      "Formal belts, silk ties, cufflinks and pocket squares — the finishing touches that complete the look.",
+    title: "Belts",
+    description: "Classic leather belts selected to complement your shoes and complete the look.",
     image: collectionAccessories,
-    to: "/collections" as const,
-    alt: "Men's formal accessories flat lay with belt, tie and watch",
+    to: "/shoes" as const,
+    alt: "Leather belt from the Marco Adamo collection",
   },
 ];
 
@@ -79,18 +60,17 @@ function CollectionsPage() {
             Marco Adamo
           </p>
           <h1 className="mt-4 font-display text-4xl font-black uppercase tracking-tight text-foreground md:text-6xl">
-            Our Collections
+            Our Shoes Collection
           </h1>
           <p className="mt-6 max-w-2xl leading-relaxed text-muted-foreground">
-            Five disciplines, one standard. Every piece in our emporium is
-            selected at the source and finished with the care of 35 years of
-            experience.
+            Three distinct collections, one standard. Find timeless formal
+            pairs, easy casual styles and belts to bring the look together.
           </p>
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-20">
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {items.map((item) => (
             <Link
               key={item.title}
