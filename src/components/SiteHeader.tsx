@@ -8,7 +8,9 @@ import { Button } from "@/components/ui/button";
 const navItems = [
   { to: "/", label: "Home" },
   { to: "/collections", label: "Shoes Collection" },
-  { to: "/shoes", label: "Shoes" },
+  { to: "/shoes", label: "Classic Shoes" },
+  { to: "/shoes", label: "Casual Shoes" },
+  { to: "/shoes", label: "Belts" },
   { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
 ] as const;
@@ -86,7 +88,7 @@ export function SiteHeader() {
         >
           <ul className="flex flex-col gap-1">
             {navItems.map((item) => (
-              <li key={item.to}>
+              <li key={`${item.to}-${item.label}`}>
                 <Link
                   to={item.to}
                   activeOptions={{ exact: item.to === "/" }}
@@ -144,7 +146,7 @@ export function SiteHeader() {
                 </li>
               ) : (
                 results.map((item) => (
-                  <li key={item.to}>
+                  <li key={`${item.to}-${item.label}`}>
                     <Button
                       type="button"
                       variant="ghost"

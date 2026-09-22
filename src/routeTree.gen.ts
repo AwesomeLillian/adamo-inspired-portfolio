@@ -11,12 +11,9 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
-import { Route as CoatsRouteImport } from './routes/coats'
 import { Route as CollectionsRouteImport } from './routes/collections'
 import { Route as ContactRouteImport } from './routes/contact'
-import { Route as ShirtsRouteImport } from './routes/shirts'
 import { Route as ShoesRouteImport } from './routes/shoes'
-import { Route as SuitsRouteImport } from './routes/suits'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -26,11 +23,6 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CoatsRoute = CoatsRouteImport.update({
-  id: '/coats',
-  path: '/coats',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CollectionsRoute = CollectionsRouteImport.update({
@@ -43,95 +35,48 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ShirtsRoute = ShirtsRouteImport.update({
-  id: '/shirts',
-  path: '/shirts',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ShoesRoute = ShoesRouteImport.update({
   id: '/shoes',
   path: '/shoes',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SuitsRoute = SuitsRouteImport.update({
-  id: '/suits',
-  path: '/suits',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/coats': typeof CoatsRoute
   '/collections': typeof CollectionsRoute
   '/contact': typeof ContactRoute
-  '/shirts': typeof ShirtsRoute
   '/shoes': typeof ShoesRoute
-  '/suits': typeof SuitsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/coats': typeof CoatsRoute
   '/collections': typeof CollectionsRoute
   '/contact': typeof ContactRoute
-  '/shirts': typeof ShirtsRoute
   '/shoes': typeof ShoesRoute
-  '/suits': typeof SuitsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/coats': typeof CoatsRoute
   '/collections': typeof CollectionsRoute
   '/contact': typeof ContactRoute
-  '/shirts': typeof ShirtsRoute
   '/shoes': typeof ShoesRoute
-  '/suits': typeof SuitsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/about'
-    | '/coats'
-    | '/collections'
-    | '/contact'
-    | '/shirts'
-    | '/shoes'
-    | '/suits'
+  fullPaths: '/' | '/about' | '/collections' | '/contact' | '/shoes'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/about'
-    | '/coats'
-    | '/collections'
-    | '/contact'
-    | '/shirts'
-    | '/shoes'
-    | '/suits'
-  id:
-    | '__root__'
-    | '/'
-    | '/about'
-    | '/coats'
-    | '/collections'
-    | '/contact'
-    | '/shirts'
-    | '/shoes'
-    | '/suits'
+  to: '/' | '/about' | '/collections' | '/contact' | '/shoes'
+  id: '__root__' | '/' | '/about' | '/collections' | '/contact' | '/shoes'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  CoatsRoute: typeof CoatsRoute
   CollectionsRoute: typeof CollectionsRoute
   ContactRoute: typeof ContactRoute
-  ShirtsRoute: typeof ShirtsRoute
   ShoesRoute: typeof ShoesRoute
-  SuitsRoute: typeof SuitsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -150,13 +95,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/coats': {
-      id: '/coats'
-      path: '/coats'
-      fullPath: '/coats'
-      preLoaderRoute: typeof CoatsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/collections': {
       id: '/collections'
       path: '/collections'
@@ -171,25 +109,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/shirts': {
-      id: '/shirts'
-      path: '/shirts'
-      fullPath: '/shirts'
-      preLoaderRoute: typeof ShirtsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/shoes': {
       id: '/shoes'
       path: '/shoes'
       fullPath: '/shoes'
       preLoaderRoute: typeof ShoesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/suits': {
-      id: '/suits'
-      path: '/suits'
-      fullPath: '/suits'
-      preLoaderRoute: typeof SuitsRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -198,12 +122,9 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  CoatsRoute: CoatsRoute,
   CollectionsRoute: CollectionsRoute,
   ContactRoute: ContactRoute,
-  ShirtsRoute: ShirtsRoute,
   ShoesRoute: ShoesRoute,
-  SuitsRoute: SuitsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
