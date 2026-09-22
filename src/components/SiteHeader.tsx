@@ -88,7 +88,7 @@ export function SiteHeader() {
         >
           <ul className="flex flex-col gap-1">
             {navItems.map((item) => (
-              <li key={item.to}>
+              <li key={`${item.to}-${item.label}`}>
                 <Link
                   to={item.to}
                   activeOptions={{ exact: item.to === "/" }}
@@ -146,7 +146,7 @@ export function SiteHeader() {
                 </li>
               ) : (
                 results.map((item) => (
-                  <li key={item.to}>
+                  <li key={`${item.to}-${item.label}`}>
                     <Button
                       type="button"
                       variant="ghost"
