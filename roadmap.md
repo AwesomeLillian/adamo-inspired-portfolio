@@ -9,4 +9,4 @@
 - [x] About page (35 years heritage)
 - [x] Contact page (stores, WhatsApp, hours)
 - [x] SEO head() per route
-- [ ] Convert the site to a shoes-only concept using the uploaded storefront image, three shoe collections, and updated footer contact details.
+- [x] Convert the site to a shoes-only concept using the uploaded storefront image, three shoe collections, and updated footer contact details.

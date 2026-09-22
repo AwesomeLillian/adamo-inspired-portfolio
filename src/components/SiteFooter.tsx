@@ -19,8 +19,8 @@ export function SiteFooter() {
           </div>
 
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
-            Designer men's clothing, imported for you. Exclusive men's clothing
-            emporium — owner managed and run for over 35 years.
+            Classic and casual shoes selected for lasting quality, confident
+            style and everyday comfort.
           </p>
 
           <div className="mt-5 flex items-center gap-3">
@@ -50,11 +50,8 @@ export function SiteFooter() {
             Explore
           </h3>
           <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-            <li><Link to="/collections" className="transition-colors hover:text-primary">Collections</Link></li>
-            <li><Link to="/suits" className="transition-colors hover:text-primary">Suits</Link></li>
+            <li><Link to="/collections" className="transition-colors hover:text-primary">Shoes Collection</Link></li>
             <li><Link to="/shoes" className="transition-colors hover:text-primary">Shoes</Link></li>
-            <li><Link to="/shirts" className="transition-colors hover:text-primary">Shirts</Link></li>
-            <li><Link to="/coats" className="transition-colors hover:text-primary">Coats</Link></li>
             <li><Link to="/about" className="transition-colors hover:text-primary">About us</Link></li>
           </ul>
         </div>
@@ -66,7 +63,7 @@ export function SiteFooter() {
           <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
             <li className="flex items-start gap-2">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-              <span>Conveniently located at a centre near you, Johannesburg</span>
+              <span>Level 5 Opposite Truworths Men, Fourways Mall, Johannesburg</span>
             </li>
             <li className="flex items-start gap-2">
               <Clock className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
@@ -75,12 +72,10 @@ export function SiteFooter() {
             <li className="flex items-start gap-2">
               <Phone className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
               <a
-                href="https://wa.me/27761964617"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="tel:0825746017"
                 className="transition-colors hover:text-primary"
               >
-                +27 76 196 4617
+                082 574 6017
               </a>
             </li>
           </ul>

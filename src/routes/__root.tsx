@@ -80,18 +80,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Marco Adamo — Designer Men's Clothing, Imported For You" },
+      { title: "Marco Adamo — Classic & Casual Shoes" },
       {
         name: "description",
         content:
-          "Marco Adamo is an exclusive men's clothing emporium. Imported Italian suits, genuine leather shoes and 2ply Egyptian cotton shirts — owner managed for over 35 years.",
+          "Marco Adamo offers classic shoes, casual shoes and leather belts at Fourways Mall, Johannesburg.",
       },
       { name: "author", content: "Marco Adamo" },
       { property: "og:title", content: "Marco Adamo — Essence of Elegance" },
       {
         property: "og:description",
         content:
-          "Imported Italian suits, genuine leather shoes and Egyptian cotton shirts. The quality of our suits is second to none.",
+          "Discover classic shoes, casual shoes and leather belts at Marco Adamo.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

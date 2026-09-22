@@ -6,11 +6,8 @@ import logo from "@/assets/marco-adamo-logo.png";
 
 const navItems = [
   { to: "/", label: "Home" },
-  { to: "/collections", label: "Collections" },
-  { to: "/suits", label: "Suits" },
+  { to: "/collections", label: "Shoes Collection" },
   { to: "/shoes", label: "Shoes" },
-  { to: "/shirts", label: "Shirts" },
-  { to: "/coats", label: "Coats" },
   { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
 ] as const;
@@ -111,7 +108,7 @@ export function SiteHeader() {
                 type="search"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search collections, suits, shoes..."
+                placeholder="Search shoes, belts, contact..."
                 className="w-full bg-transparent text-xl text-foreground outline-none placeholder:text-muted-foreground"
                 aria-label="Search the site"
                 onKeyDown={(e) => {
