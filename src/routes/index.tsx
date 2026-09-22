@@ -138,8 +138,8 @@ function Index() {
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 lg:grid-cols-2">
           <div className="overflow-hidden rounded-md border border-border">
             <img
-              src={casualShoes}
-              alt="Cognac casual leather shoes from Marco Adamo"
+              src={collectionShoes}
+              alt="Classic leather shoes from Marco Adamo"
               loading="lazy"
               width={1280}
               height={1024}
