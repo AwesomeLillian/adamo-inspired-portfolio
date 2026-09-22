@@ -81,7 +81,7 @@ function ContactPage() {
               The team typically replies within a few minutes.
             </p>
             <a
-              href="https://wa.me/27761964617?text=How%20can%20I%20help%20you%3F"
+              href="https://wa.me/27761964617?text=Hi%20Marco%20Adamo%2C%20I%27d%20like%20to%20know%20more%20about%20your%20shoes."
               target="_blank"
               rel="noopener noreferrer"
               className="mt-6 inline-flex items-center gap-2 rounded-md bg-whatsapp px-5 py-3 text-sm font-semibold text-background transition-opacity hover:opacity-90"
