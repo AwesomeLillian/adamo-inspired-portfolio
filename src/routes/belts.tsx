@@ -76,13 +76,13 @@ function BeltsPage() {
             <h2 className="max-w-2xl font-display text-3xl font-extrabold uppercase tracking-tight text-foreground md:text-5xl">Explore our belt options</h2>
             <p className="max-w-md text-sm leading-relaxed text-muted-foreground">Visit us in store to see current colours, finishes and buckle styles, and to find your ideal fit.</p>
           </div>
-          <div className="mt-12 grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-5 lg:grid-cols-4">
-            {beltOptions.map((option, index) => (
+          <div className="mt-12 grid grid-cols-2 gap-3 md:gap-5 lg:grid-cols-4">
+            {beltOptions.map((option) => (
               <figure
                 key={option.image}
-                className={`group overflow-hidden rounded-md border border-border bg-background ${index === 0 || index === 5 ? "md:col-span-2" : ""}`}
+                className="group overflow-hidden rounded-md border border-border bg-background"
               >
-                <div className="aspect-[3/4] overflow-hidden">
+                <div className="aspect-[4/3] overflow-hidden">
                   <img
                     src={option.image}
                     alt={option.alt}

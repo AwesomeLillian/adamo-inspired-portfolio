@@ -2,6 +2,15 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Check } from "lucide-react";
 
 import casualShoes from "@/assets/collection-casual-shoes.jpg";
+import casualOption1 from "@/assets/ca_IMG-20260915-WA0033.jpg.asset.json";
+import casualOption2 from "@/assets/ca_IMG-20260915-WA0035.jpg.asset.json";
+import casualOption3 from "@/assets/ca_IMG-20260915-WA0037.jpg.asset.json";
+import casualOption4 from "@/assets/ca_IMG-20260915-WA0039.jpg.asset.json";
+import casualOption5 from "@/assets/ca_IMG-20260915-WA0041.jpg.asset.json";
+import casualOption6 from "@/assets/ca_IMG-20260915-WA0043.jpg.asset.json";
+import casualOption7 from "@/assets/ca_IMG-20260915-WA0045.jpg.asset.json";
+import casualOption8 from "@/assets/ca_IMG-20260915-WA0047.jpg.asset.json";
+import casualOption9 from "@/assets/ca_IMG-20260915-WA0049.jpg.asset.json";
 
 export const Route = createFileRoute("/casual-shoes")({
   head: () => ({
@@ -25,6 +34,18 @@ const features = [
   "Versatile shades for relaxed dressing",
 ];
 
+const casualOptions = [
+  { image: casualOption1.url, alt: "Black brogue lace-up shoe with a chunky sole" },
+  { image: casualOption2.url, alt: "Polished black derby shoe with a chunky sole" },
+  { image: casualOption3.url, alt: "Black double monk-strap shoe with a contrast welt" },
+  { image: casualOption4.url, alt: "Black tassel loafer with a contemporary sole" },
+  { image: casualOption5.url, alt: "Textured black lace-up moc-toe shoe" },
+  { image: casualOption6.url, alt: "Black penny loafer with a rugged sole" },
+  { image: casualOption7.url, alt: "Black textured slip-on shoe with a white sole" },
+  { image: casualOption8.url, alt: "Navy suede casual lace-up shoe" },
+  { image: casualOption9.url, alt: "Black leather cap-toe derby shoe" },
+];
+
 function CasualShoesPage() {
   return (
     <>
@@ -38,12 +59,30 @@ function CasualShoesPage() {
         </div>
       </section>
       <section className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 lg:grid-cols-2">
-        <div className="overflow-hidden rounded-md border border-border"><img src={casualShoes} alt="Brown suede driving loafers from Marco Adamo" loading="lazy" width={1024} height={1280} className="h-full max-h-[620px] w-full object-cover" /></div>
+        <div className="aspect-[4/3] overflow-hidden rounded-md border border-border"><img src={casualShoes} alt="Brown suede driving loafers from Marco Adamo" loading="lazy" width={1024} height={1280} className="h-full w-full object-cover" /></div>
         <div>
           <h2 className="font-display text-3xl font-extrabold uppercase tracking-tight text-foreground md:text-4xl">Relaxed, never ordinary</h2>
           <p className="mt-6 leading-relaxed text-muted-foreground">Our casual selection balances an elegant Italian profile with the comfort needed for weekends, travel and smart everyday dressing.</p>
           <ul className="mt-8 space-y-3">{features.map((feature) => <li key={feature} className="flex items-start gap-3 text-sm text-foreground/90"><Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />{feature}</li>)}</ul>
           <a href="https://wa.me/27761964617?text=I%27m%20looking%20for%20casual%20shoes" target="_blank" rel="noopener noreferrer" className="mt-10 inline-flex items-center rounded-md bg-primary px-7 py-3.5 text-sm font-semibold uppercase tracking-wider text-primary-foreground transition-colors hover:bg-primary/85">Ask about sizes</a>
+        </div>
+      </section>
+      <section className="border-y border-border bg-card">
+        <div className="mx-auto max-w-7xl px-6 py-24">
+          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-primary">Available styles</p>
+          <div className="mt-4 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+            <h2 className="max-w-2xl font-display text-3xl font-extrabold uppercase tracking-tight text-foreground md:text-5xl">Explore our casual shoes</h2>
+            <p className="max-w-md text-sm leading-relaxed text-muted-foreground">Browse our current selection, then visit us in store to find your preferred style and size.</p>
+          </div>
+          <div className="mt-12 grid grid-cols-2 gap-3 md:gap-5 lg:grid-cols-4">
+            {casualOptions.map((option) => (
+              <figure key={option.image} className="group overflow-hidden rounded-md border border-border bg-background">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img src={option.image} alt={option.alt} loading="lazy" width={1366} height={768} className="card-zoom h-full w-full object-cover" />
+                </div>
+              </figure>
+            ))}
+          </div>
         </div>
       </section>
       <section className="border-t border-border bg-card"><div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-6 px-6 py-16 md:flex-row md:items-center"><div><h2 className="font-display text-2xl font-bold uppercase tracking-wide text-foreground">Explore the collection</h2><p className="mt-2 text-sm text-muted-foreground">Discover formal classics or complete your look with a leather belt.</p></div><div className="flex flex-wrap gap-3"><Link to="/classic-shoes" className="rounded-md border border-foreground/30 px-6 py-3 text-sm font-semibold uppercase tracking-wider text-foreground transition-colors hover:border-primary hover:text-primary">Classic Shoes</Link><Link to="/belts" className="rounded-md border border-foreground/30 px-6 py-3 text-sm font-semibold uppercase tracking-wider text-foreground transition-colors hover:border-primary hover:text-primary">View Belts</Link></div></div></section>
