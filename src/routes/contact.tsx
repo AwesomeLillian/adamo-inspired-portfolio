@@ -67,9 +67,9 @@ function ContactPage() {
               Hours
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              Monday to Saturday
+              Monday – Friday: 09:00 – 20:00
               <br />
-              09:00 – 17:00
+              Saturday – Sunday: 09:00 – 19:00
             </p>
           </div>
           <div className="rounded-md border border-border bg-card p-8">

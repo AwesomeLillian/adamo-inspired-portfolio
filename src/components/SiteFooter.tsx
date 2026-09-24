@@ -69,7 +69,11 @@ export function SiteFooter() {
             </li>
             <li className="flex items-start gap-2">
               <Clock className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-              <span>Mon – Sat, 09:00 – 17:00</span>
+              <span>
+                Monday – Friday: 09:00 – 20:00
+                <br />
+                Saturday – Sunday: 09:00 – 19:00
+              </span>
             </li>
             <li className="flex items-start gap-2">
               <Phone className="mt-0.5 h-4 w-4 shrink-0 text-primary" />

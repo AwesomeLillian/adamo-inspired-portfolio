@@ -1,10 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Diamond, MapPin } from "lucide-react";
+import { ArrowRight, Diamond, Mail, MapPin, Phone } from "lucide-react";
 
 import collectionShoes from "@/assets/collection-shoes.jpg";
 import collectionAccessories from "@/assets/collection-accessories.jpg";
 import casualShoes from "@/assets/collection-casual-shoes.jpg";
 import storefrontAsset from "@/assets/marco-adamo-storefront.jpg.asset.json";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 
 
 export const Route = createFileRoute("/")({
@@ -216,6 +219,47 @@ function Index() {
             height={1280}
             className="h-full max-h-[520px] w-full object-cover"
           />
+        </div>
+      </section>
+
+      <section className="border-t border-border bg-card">
+        <div className="mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-[0.8fr_1.2fr]">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-primary">Contact us</p>
+            <h2 className="mt-4 font-display text-3xl font-extrabold uppercase tracking-tight text-foreground md:text-5xl">How can we help?</h2>
+            <p className="mt-6 max-w-md leading-relaxed text-muted-foreground">Ask about a shoe, belt, size or store visit. Complete the form and our team will get back to you.</p>
+            <div className="mt-8 space-y-4 text-sm text-muted-foreground">
+              <a href="mailto:marcoadamo59@gmail.com" className="flex items-center gap-3 transition-colors hover:text-primary"><Mail className="h-4 w-4 text-primary" />marcoadamo59@gmail.com</a>
+              <a href="tel:0825746017" className="flex items-center gap-3 transition-colors hover:text-primary"><Phone className="h-4 w-4 text-primary" />082 574 6017</a>
+            </div>
+          </div>
+          <form
+            action="mailto:marcoadamo59@gmail.com"
+            method="post"
+            encType="text/plain"
+            className="grid gap-5 rounded-md border border-border bg-background p-6 md:grid-cols-2 md:p-8"
+          >
+            <div>
+              <label htmlFor="contact-name" className="mb-2 block text-sm font-medium text-foreground">Name</label>
+              <Input id="contact-name" name="Name" autoComplete="name" required minLength={2} maxLength={100} placeholder="Your name" className="h-11" />
+            </div>
+            <div>
+              <label htmlFor="contact-email" className="mb-2 block text-sm font-medium text-foreground">Email</label>
+              <Input id="contact-email" name="Email" type="email" autoComplete="email" required maxLength={255} placeholder="you@example.com" className="h-11" />
+            </div>
+            <div className="md:col-span-2">
+              <label htmlFor="contact-phone" className="mb-2 block text-sm font-medium text-foreground">Phone number</label>
+              <Input id="contact-phone" name="Phone" type="tel" autoComplete="tel" maxLength={30} pattern="[0-9+()\- ]{7,30}" placeholder="Your phone number" className="h-11" />
+            </div>
+            <div className="md:col-span-2">
+              <label htmlFor="contact-message" className="mb-2 block text-sm font-medium text-foreground">Message</label>
+              <Textarea id="contact-message" name="Message" required minLength={10} maxLength={1500} placeholder="Tell us what you are looking for" className="min-h-36 resize-y" />
+            </div>
+            <div className="md:col-span-2">
+              <Button type="submit" size="lg" className="w-full uppercase tracking-wider sm:w-auto">Send enquiry <ArrowRight /></Button>
+              <p className="mt-3 text-xs leading-relaxed text-muted-foreground">This opens your email app with the enquiry addressed to Marco Adamo.</p>
+            </div>
+          </form>
         </div>
       </section>
 
