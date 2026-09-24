@@ -7,3 +7,7 @@
 - [x] Add the uploaded belt options to the Belts page.
 - [x] Update trading hours across the site.
 - [ ] Connect a sender domain, then activate direct home-page enquiry delivery to marcoadamo59@gmail.com.
+## Current request
+- [ ] Move the home contact form below the map.
+- [ ] Add the uploaded casual shoe photos to the casual shoes page in a uniform four-column gallery.
+- [ ] Standardize collection image galleries/cards to equal image sizes.
