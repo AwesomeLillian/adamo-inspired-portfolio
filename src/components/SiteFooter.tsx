@@ -6,6 +6,25 @@ import logo from "@/assets/marco-adamo-logo.png";
 export function SiteFooter() {
   return (
     <footer className="border-t border-border bg-card">
+      <a
+        href="https://www.google.com/maps/search/Marco+Adamo+Fourways+Mall"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="relative block h-72 w-full border-b border-border"
+        aria-label="Open Marco Adamo at Fourways Mall in Google Maps"
+      >
+        <iframe
+          title="Marco Adamo at Fourways Mall"
+          src="https://maps.google.com/maps?q=Marco%20Adamo%20Fourways%20Mall&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          className="pointer-events-none absolute inset-0 h-full w-full border-0 grayscale"
+          tabIndex={-1}
+        />
+        <span className="absolute bottom-5 left-1/2 -translate-x-1/2 bg-primary px-6 py-3 text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-primary-foreground">
+          Open in Google Maps
+        </span>
+      </a>
       <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 md:grid-cols-3">
         <div>
           <div className="flex items-center gap-3">
@@ -18,10 +37,11 @@ export function SiteFooter() {
             />
           </div>
 
-          <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
+          <p className="mt-4 max-w-xs font-display text-xl italic leading-relaxed text-muted-foreground">
             Classic and casual shoes selected for lasting quality, confident
             style and everyday comfort.
           </p>
+          <p className="mt-6 font-logo text-4xl italic text-primary">It’s Italian</p>
 
           <div className="mt-5 flex items-center gap-3">
             <a

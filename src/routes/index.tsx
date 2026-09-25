@@ -70,11 +70,11 @@ function Index() {
         />
         <div className="hero-overlay absolute inset-0" />
         <div className="relative mx-auto w-full max-w-7xl px-6 py-24">
-          <p className="fade-up text-xs font-semibold uppercase tracking-[0.35em] text-primary">
-            Footwear for every occasion
+          <p className="fade-up editorial-kicker border-l border-primary pl-4">
+            The Fourways Collection · Johannesburg
           </p>
-          <h1 className="fade-up mt-6 max-w-3xl font-display text-5xl font-black uppercase leading-[1.02] tracking-tight text-foreground md:text-7xl">
-            Essence of Elegance
+          <h1 className="fade-up mt-7 max-w-3xl font-display text-6xl font-medium leading-[0.95] text-foreground md:text-8xl">
+            Marco Adamo<br /><span className="text-gold">Essence of Elegance</span>
           </h1>
           <p className="fade-up mt-6 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
             From polished classics to relaxed everyday pairs, discover quality
@@ -96,11 +96,11 @@ function Index() {
       <section className="mx-auto max-w-7xl px-6 py-24">
         <div className="flex items-end justify-between gap-6">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-primary">
+            <p className="editorial-kicker">
               Our Shoes Collection
             </p>
-            <h2 className="mt-4 font-display text-3xl font-extrabold uppercase tracking-tight text-foreground md:text-5xl">
-              Crafted for the gentleman
+            <h2 className="mt-4 font-display text-4xl font-semibold leading-none text-foreground md:text-6xl">
+              Selected with purpose
             </h2>
           </div>
           <Link
@@ -121,11 +121,11 @@ function Index() {
                   loading="lazy"
                   width={1024}
                   height={1024}
-                  className="card-zoom h-full w-full object-cover"
+                    className="h-full w-full bg-product object-contain p-4"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/20 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-5">
-                  <h3 className="font-display text-xl font-bold uppercase tracking-wide text-foreground transition-colors group-hover:text-primary">
+                  <h3 className="font-display text-3xl font-semibold text-foreground transition-colors group-hover:text-primary">
                     {item.title}
                   </h3>
                   <p className="mt-1 text-sm text-muted-foreground">{item.description}</p>
@@ -150,10 +150,10 @@ function Index() {
             />
           </div>
           <div>
-            <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.35em] text-primary">
+            <p className="editorial-kicker flex items-center gap-2">
               <Diamond className="h-4 w-4" /> our collection
             </p>
-            <h2 className="mt-4 font-display text-3xl font-extrabold uppercase tracking-tight text-foreground md:text-5xl">
+            <h2 className="mt-4 font-display text-4xl font-semibold leading-none text-foreground md:text-6xl">
               Our signature standard
             </h2>
             <p className="mt-6 max-w-lg leading-relaxed text-muted-foreground">
@@ -193,11 +193,11 @@ function Index() {
       {/* About teaser */}
       <section className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 lg:grid-cols-2">
         <div className="order-2 lg:order-1">
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-primary">
+           <p className="editorial-kicker">
             About Us
           </p>
-          <h2 className="mt-4 font-display text-3xl font-extrabold uppercase tracking-tight text-foreground md:text-4xl">
-            "Quality footwear, selected for you"
+           <h2 className="mt-4 font-display text-4xl font-medium italic leading-none text-foreground md:text-6xl">
+             “Quality footwear, selected for you”
           </h2>
           <p className="mt-6 max-w-lg leading-relaxed text-muted-foreground">
              With over 35 years of experience, Marco Adamo brings personal
@@ -225,10 +225,10 @@ function Index() {
       {/* Visit us */}
       <section className="border-t border-border">
         <div className="mx-auto max-w-7xl px-6 pt-24 pb-14">
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-primary">
+           <p className="editorial-kicker">
             Come pay us a visit
           </p>
-          <h2 className="mt-4 max-w-xl font-display text-3xl font-extrabold uppercase tracking-tight text-foreground md:text-5xl">
+           <h2 className="mt-4 max-w-xl font-display text-4xl font-semibold leading-none text-foreground md:text-6xl">
             Experience the emporium in person
           </h2>
           <p className="mt-6 max-w-lg leading-relaxed text-muted-foreground">
@@ -279,16 +279,16 @@ function Index() {
       <section className="border-t border-border bg-card">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-primary">Contact us</p>
-            <h2 className="mt-4 font-display text-3xl font-extrabold uppercase tracking-tight text-foreground md:text-5xl">How can we help?</h2>
+             <p className="editorial-kicker">Contact us</p>
+             <h2 className="mt-4 font-display text-4xl font-semibold leading-none text-foreground md:text-6xl">How can we help?</h2>
             <p className="mt-6 max-w-md leading-relaxed text-muted-foreground">Ask about a shoe, belt, size or store visit. Complete the form and our team will get back to you.</p>
             <div className="mt-8 space-y-4 text-sm text-muted-foreground">
-              <a href="mailto:marcoadamo59@gmail.com" className="flex items-center gap-3 transition-colors hover:text-primary"><Mail className="h-4 w-4 text-primary" />marcoadamo59@gmail.com</a>
+               <a href="mailto:adamomarco59@gmail.com" className="flex items-center gap-3 transition-colors hover:text-primary"><Mail className="h-4 w-4 text-primary" />adamomarco59@gmail.com</a>
               <a href="tel:0825746017" className="flex items-center gap-3 transition-colors hover:text-primary"><Phone className="h-4 w-4 text-primary" />082 574 6017</a>
             </div>
           </div>
           <form
-            action="mailto:marcoadamo59@gmail.com"
+             action="mailto:adamomarco59@gmail.com"
             method="post"
             encType="text/plain"
             className="grid gap-5 rounded-md border border-border bg-background p-6 md:grid-cols-2 md:p-8"

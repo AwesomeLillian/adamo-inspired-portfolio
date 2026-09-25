@@ -11,9 +11,9 @@
  */
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Archivo", "Inter", ui-sans-serif, sans-serif;
-  --font-logo: "Playfair Display", Georgia, serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-logo: "Cormorant Garamond", Georgia, serif;
 }
 
 @theme inline {
@@ -42,6 +42,8 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-whatsapp: var(--whatsapp);
+  --color-gold: var(--gold);
+  --color-product: var(--product);
 }
 
 :root {
@@ -69,6 +71,8 @@
   --ring: oklch(0.53 0.22 27);
   /* WhatsApp brand green for the chat float */
   --whatsapp: oklch(0.72 0.19 150);
+  --gold: oklch(0.74 0.1 82);
+  --product: oklch(0.97 0.003 80);
 }
 
 @layer base {
@@ -80,7 +84,16 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
+    letter-spacing: 0;
   }
+}
+
+@utility editorial-kicker {
+  color: var(--color-gold);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
 }
 
 @utility text-balance {
@@ -100,6 +113,14 @@
   transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
   &:hover {
     transform: scale(1.04);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-zoom,
+  .fade-up {
+    animation: none;
+    transition: none;
   }
 }
 

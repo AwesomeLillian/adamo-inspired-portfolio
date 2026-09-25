@@ -45,18 +45,24 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
+      <div className="mx-auto grid h-20 max-w-7xl grid-cols-[1fr_auto_1fr] items-center px-6">
         <Link to="/" className="flex items-center" aria-label="Marco Adamo home">
           <img
             src={logo}
             alt="Marco Adamo"
             width={500}
             height={250}
-            className="h-14 w-auto md:h-16"
+            className="h-12 w-auto md:h-14"
           />
         </Link>
 
-        <div className="flex items-center gap-4">
+        <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary navigation">
+          <Link to="/collections" className="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-foreground/70 transition-colors hover:text-primary">Collection</Link>
+          <Link to="/about" className="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-foreground/70 transition-colors hover:text-primary">Our story</Link>
+          <Link to="/contact" className="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-foreground/70 transition-colors hover:text-primary">Visit</Link>
+        </nav>
+
+        <div className="flex items-center justify-end gap-3">
           <Button
             type="button"
             variant="ghost"
@@ -71,7 +77,7 @@ export function SiteHeader() {
             type="button"
             variant="ghost"
             size="icon"
-            className="text-foreground hover:text-primary"
+            className="text-foreground hover:text-primary lg:hidden"
             onClick={() => setOpen((v) => !v)}
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
