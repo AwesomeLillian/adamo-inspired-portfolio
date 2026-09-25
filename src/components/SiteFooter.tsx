@@ -41,6 +41,7 @@ export function SiteFooter() {
             Classic and casual shoes selected for lasting quality, confident
             style and everyday comfort.
           </p>
+          <p className="mt-6 font-logo text-4xl italic text-primary">It’s Italian</p>
 
           <div className="mt-5 flex items-center gap-3">
             <a

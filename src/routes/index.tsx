@@ -121,7 +121,7 @@ function Index() {
                   loading="lazy"
                   width={1024}
                   height={1024}
-                    className="card-zoom h-full w-full object-contain bg-product p-4"
+                    className="h-full w-full bg-product object-contain p-4"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/20 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-5">

@@ -56,15 +56,15 @@ function BeltsPage() {
         <img src={beltsImage} alt="Marco Adamo leather belt collection" className="absolute inset-0 h-full w-full object-cover" width={1024} height={1024} />
         <div className="hero-overlay absolute inset-0" />
         <div className="relative mx-auto w-full max-w-7xl px-6 py-24">
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-primary">The Accessories Collection</p>
-          <h1 className="mt-4 font-display text-4xl font-black uppercase tracking-tight text-foreground md:text-6xl">Leather Belts</h1>
+          <p className="editorial-kicker border-l border-primary pl-4">The Accessories Collection</p>
+          <h1 className="mt-5 font-display text-5xl font-semibold leading-none text-foreground md:text-7xl">Leather Belts</h1>
           <p className="mt-6 max-w-xl leading-relaxed text-muted-foreground">The finishing detail that brings a look together, selected in timeless colours to complement your footwear.</p>
         </div>
       </section>
       <section className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 lg:grid-cols-2">
         <div className="overflow-hidden rounded-md border border-border"><img src={beltsImage} alt="Classic leather belts and accessories" loading="lazy" width={1024} height={1024} className="h-full max-h-[620px] w-full object-cover" /></div>
         <div>
-          <h2 className="font-display text-3xl font-extrabold uppercase tracking-tight text-foreground md:text-4xl">Complete the look</h2>
+          <h2 className="font-display text-4xl font-semibold leading-none text-foreground md:text-5xl">Complete the look</h2>
           <p className="mt-6 leading-relaxed text-muted-foreground">Choose a leather belt that works naturally with your favourite classic or casual pair. Our team can help you find the right colour, finish and fit.</p>
           <ul className="mt-8 space-y-3">{features.map((feature) => <li key={feature} className="flex items-start gap-3 text-sm text-foreground/90"><Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />{feature}</li>)}</ul>
           <a href="https://wa.me/27761964617?text=I%27m%20looking%20for%20a%20leather%20belt" target="_blank" rel="noopener noreferrer" className="mt-10 inline-flex items-center rounded-md bg-primary px-7 py-3.5 text-sm font-semibold uppercase tracking-wider text-primary-foreground transition-colors hover:bg-primary/85">Ask about belts</a>

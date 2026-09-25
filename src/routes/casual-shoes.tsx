@@ -54,15 +54,15 @@ function CasualShoesPage() {
         <img src={casualShoes} alt="Italian-style brown suede casual loafers" className="absolute inset-0 h-full w-full object-cover" width={1024} height={1280} />
         <div className="hero-overlay absolute inset-0" />
         <div className="relative mx-auto w-full max-w-7xl px-6 py-24">
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-primary">The Casual Collection</p>
-          <h1 className="mt-4 font-display text-4xl font-black uppercase tracking-tight text-foreground md:text-6xl">Casual Shoes</h1>
+          <p className="editorial-kicker border-l border-primary pl-4">The Casual Collection</p>
+          <h1 className="mt-5 font-display text-5xl font-semibold leading-none text-foreground md:text-7xl">Casual Shoes</h1>
           <p className="mt-6 max-w-xl leading-relaxed text-muted-foreground">Italian-inspired loafers and relaxed leather shoes chosen for easy sophistication, comfort and everyday style.</p>
         </div>
       </section>
       <section className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 lg:grid-cols-2">
         <div className="aspect-[4/3] overflow-hidden rounded-md border border-border"><img src={casualShoes} alt="Brown suede driving loafers from Marco Adamo" loading="lazy" width={1024} height={1280} className="h-full w-full object-cover" /></div>
         <div>
-          <h2 className="font-display text-3xl font-extrabold uppercase tracking-tight text-foreground md:text-4xl">Relaxed, never ordinary</h2>
+          <h2 className="font-display text-4xl font-semibold leading-none text-foreground md:text-5xl">Relaxed, never ordinary</h2>
           <p className="mt-6 leading-relaxed text-muted-foreground">Our casual selection balances an elegant Italian profile with the comfort needed for weekends, travel and smart everyday dressing.</p>
           <ul className="mt-8 space-y-3">{features.map((feature) => <li key={feature} className="flex items-start gap-3 text-sm text-foreground/90"><Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />{feature}</li>)}</ul>
           <a href="https://wa.me/27761964617?text=I%27m%20looking%20for%20casual%20shoes" target="_blank" rel="noopener noreferrer" className="mt-10 inline-flex items-center rounded-md bg-primary px-7 py-3.5 text-sm font-semibold uppercase tracking-wider text-primary-foreground transition-colors hover:bg-primary/85">Ask about sizes</a>

@@ -71,10 +71,10 @@ function ShoesPage() {
         />
         <div className="hero-overlay absolute inset-0" />
         <div className="relative mx-auto w-full max-w-7xl px-6 py-24">
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-primary">
+          <p className="editorial-kicker border-l border-primary pl-4">
             The Classic Collection
           </p>
-          <h1 className="mt-4 font-display text-4xl font-black uppercase tracking-tight text-foreground md:text-6xl">
+          <h1 className="mt-5 font-display text-5xl font-semibold leading-none text-foreground md:text-7xl">
             Classic Shoes
           </h1>
           <p className="mt-6 max-w-xl leading-relaxed text-muted-foreground">
@@ -96,7 +96,7 @@ function ShoesPage() {
           />
         </div>
         <div className="order-1 lg:order-2">
-          <h2 className="font-display text-3xl font-extrabold uppercase tracking-tight text-foreground md:text-4xl">
+          <h2 className="font-display text-4xl font-semibold leading-none text-foreground md:text-5xl">
             Leather that earns its shine
           </h2>
           <p className="mt-6 leading-relaxed text-muted-foreground">
