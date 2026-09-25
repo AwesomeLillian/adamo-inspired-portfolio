@@ -12,6 +12,7 @@ import beltOption7 from "@/assets/b_IMG_20220803_141546.jpg.asset.json";
 import beltOption8 from "@/assets/b_IMG_20220803_141735.jpg.asset.json";
 import beltOption9 from "@/assets/b_IMG_20220803_141941.jpg.asset.json";
 import beltOption10 from "@/assets/b_IMG_20220803_142143.jpg.asset.json";
+import { ProductGallery } from "@/components/ProductGallery";
 
 export const Route = createFileRoute("/belts")({
   head: () => ({
@@ -36,16 +37,16 @@ const features = [
 ];
 
 const beltOptions = [
-  { image: beltOption1.url, alt: "Brown, black and hand-stitched Marco Adamo leather belts" },
-  { image: beltOption2.url, alt: "Marco Adamo belts with statement metal buckles" },
-  { image: beltOption3.url, alt: "Black, brown and grey belts with sculpted buckles" },
-  { image: beltOption4.url, alt: "Textured black and grey belts with decorative buckles" },
-  { image: beltOption5.url, alt: "Classic black and tan Marco Adamo leather belts" },
-  { image: beltOption6.url, alt: "Black, taupe and woven leather belt selection" },
-  { image: beltOption7.url, alt: "Brown, black and tan polished leather belts" },
-  { image: beltOption8.url, alt: "Navy, woven black, tan and black leather belts" },
-  { image: beltOption9.url, alt: "Brown, grey and black hand-stitched leather belts" },
-  { image: beltOption10.url, alt: "Tan, red and perforated suede belt collection" },
+  { image: beltOption1.url, alt: "Brown, black and hand-stitched Marco Adamo leather belts", description: "Genuine leather, carefully finished with precise stitching and a refined buckle." },
+  { image: beltOption2.url, alt: "Marco Adamo belts with statement metal buckles", description: "Genuine leather, carefully finished with precise stitching and a refined buckle." },
+  { image: beltOption3.url, alt: "Black, brown and grey belts with sculpted buckles", description: "Genuine leather, carefully finished with precise stitching and a refined buckle." },
+  { image: beltOption4.url, alt: "Textured black and grey belts with decorative buckles", description: "Genuine leather, carefully finished with precise stitching and a refined buckle." },
+  { image: beltOption5.url, alt: "Classic black and tan Marco Adamo leather belts", description: "Genuine leather, carefully finished with precise stitching and a refined buckle." },
+  { image: beltOption6.url, alt: "Black, taupe and woven leather belt selection", description: "Genuine leather, carefully finished with precise stitching and a refined buckle." },
+  { image: beltOption7.url, alt: "Brown, black and tan polished leather belts", description: "Genuine leather, carefully finished with precise stitching and a refined buckle." },
+  { image: beltOption8.url, alt: "Navy, woven black, tan and black leather belts", description: "Genuine leather, carefully finished with precise stitching and a refined buckle." },
+  { image: beltOption9.url, alt: "Brown, grey and black hand-stitched leather belts", description: "Genuine leather, carefully finished with precise stitching and a refined buckle." },
+  { image: beltOption10.url, alt: "Tan, red and perforated suede belt collection", description: "Genuine leather, carefully finished with precise stitching and a refined buckle." },
 ];
 
 function BeltsPage() {
@@ -69,34 +70,7 @@ function BeltsPage() {
           <a href="https://wa.me/27761964617?text=I%27m%20looking%20for%20a%20leather%20belt" target="_blank" rel="noopener noreferrer" className="mt-10 inline-flex items-center rounded-md bg-primary px-7 py-3.5 text-sm font-semibold uppercase tracking-wider text-primary-foreground transition-colors hover:bg-primary/85">Ask about belts</a>
         </div>
       </section>
-      <section className="border-y border-border bg-card">
-        <div className="mx-auto max-w-7xl px-6 py-24">
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-primary">Available styles</p>
-          <div className="mt-4 flex flex-col justify-between gap-4 md:flex-row md:items-end">
-            <h2 className="max-w-2xl font-display text-3xl font-extrabold uppercase tracking-tight text-foreground md:text-5xl">Explore our belt options</h2>
-            <p className="max-w-md text-sm leading-relaxed text-muted-foreground">Visit us in store to see current colours, finishes and buckle styles, and to find your ideal fit.</p>
-          </div>
-          <div className="mt-12 grid grid-cols-2 gap-3 md:gap-5 lg:grid-cols-4">
-            {beltOptions.map((option) => (
-              <figure
-                key={option.image}
-                className="group overflow-hidden rounded-md border border-border bg-background"
-              >
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img
-                    src={option.image}
-                    alt={option.alt}
-                    loading="lazy"
-                    width={768}
-                    height={1024}
-                    className="card-zoom h-full w-full object-cover"
-                  />
-                </div>
-              </figure>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ProductGallery eyebrow="The collection" title="Belts that complete the composition" introduction="Visit our Fourways Mall boutique to compare colours, finishes and buckle styles, and find the right fit." products={beltOptions} />
       <section className="border-t border-border bg-card"><div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-6 px-6 py-16 md:flex-row md:items-center"><div><h2 className="font-display text-2xl font-bold uppercase tracking-wide text-foreground">Find the matching pair</h2><p className="mt-2 text-sm text-muted-foreground">Pair your belt with classic or casual Marco Adamo footwear.</p></div><div className="flex flex-wrap gap-3"><Link to="/classic-shoes" className="rounded-md border border-foreground/30 px-6 py-3 text-sm font-semibold uppercase tracking-wider text-foreground transition-colors hover:border-primary hover:text-primary">Classic Shoes</Link><Link to="/casual-shoes" className="rounded-md border border-foreground/30 px-6 py-3 text-sm font-semibold uppercase tracking-wider text-foreground transition-colors hover:border-primary hover:text-primary">Casual Shoes</Link></div></div></section>
     </>
   );

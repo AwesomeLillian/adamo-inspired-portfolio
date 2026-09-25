@@ -2,6 +2,17 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Check } from "lucide-react";
 
 import collectionShoes from "@/assets/collection-shoes.jpg";
+import classicOption1 from "@/assets/classic-model-1.jpg.asset.json";
+import classicOption2 from "@/assets/classic-model-2.jpg.asset.json";
+import classicOption3 from "@/assets/classic-model-6.jpg.asset.json";
+import classicOption4 from "@/assets/classic-model-8-clean.jpg.asset.json";
+import classicOption5 from "@/assets/classic-model-9-clean.jpg.asset.json";
+import classicOption6 from "@/assets/classic-model-10-clean.jpg.asset.json";
+import classicOption7 from "@/assets/classic-model-11-clean.jpg.asset.json";
+import classicOption8 from "@/assets/classic-model-12-clean.jpg.asset.json";
+import classicOption9 from "@/assets/classic-model-13-clean.jpg.asset.json";
+import classicOption10 from "@/assets/classic-model-14-clean.jpg.asset.json";
+import { ProductGallery } from "@/components/ProductGallery";
 
 export const Route = createFileRoute("/classic-shoes")({
   head: () => ({
@@ -30,6 +41,21 @@ const features = [
   "Oxfords, derbies, loafers and monk straps",
   "Classic black, chestnut and oxblood",
   "Hand-finished for a polished formal look",
+];
+
+const leatherDescription = "Crafted from genuine leather, with a premium leather upper and leather sole.";
+
+const classicOptions = [
+  { image: classicOption1.url, alt: "Classic leather dress shoes displayed in the Marco Adamo boutique", description: leatherDescription },
+  { image: classicOption2.url, alt: "Black classic leather loafer with a polished finish", description: leatherDescription },
+  { image: classicOption3.url, alt: "Black brogue leather shoe on a boutique display", description: leatherDescription },
+  { image: classicOption4.url, alt: "Chestnut and dark brown leather wingtip shoes", description: leatherDescription },
+  { image: classicOption5.url, alt: "Tan, brown and black leather brogue shoes", description: leatherDescription },
+  { image: classicOption6.url, alt: "Brown and navy double monk-strap leather shoes", description: leatherDescription },
+  { image: classicOption7.url, alt: "Oxblood and tan wholecut leather shoes", description: leatherDescription },
+  { image: classicOption8.url, alt: "Black, navy and brown textured leather lace-up shoes", description: leatherDescription },
+  { image: classicOption9.url, alt: "Brown, black and navy buckle leather loafers", description: leatherDescription },
+  { image: classicOption10.url, alt: "Black and oxblood leather derby shoes", description: leatherDescription },
 ];
 
 function ShoesPage() {
@@ -96,6 +122,13 @@ function ShoesPage() {
           </a>
         </div>
       </section>
+
+      <ProductGallery
+        eyebrow="The collection"
+        title="Classic shoes, considered in every detail"
+        introduction="Explore the current selection, then visit our Fourways Mall boutique for personal guidance on style, size and fit."
+        products={classicOptions}
+      />
 
       <section className="border-t border-border bg-card">
         <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-6 px-6 py-16 md:flex-row md:items-center">

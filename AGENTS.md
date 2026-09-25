@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Shared product collections use `ProductGallery` with fixed 4:3 `object-contain` frames so every supplied product remains fully visible and consistently described.
