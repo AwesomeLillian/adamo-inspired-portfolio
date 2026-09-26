@@ -1,9 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Diamond, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowRight, Diamond } from "lucide-react";
 
 import collectionShoes from "@/assets/collection-shoes.jpg";
 import collectionAccessories from "@/assets/collection-accessories.jpg";
-import casualShoes from "@/assets/collection-casual-shoes.jpg";
+import casualShoe from "@/assets/ca_IMG-20260915-WA0047.jpg.asset.json";
 import storefrontAsset from "@/assets/marco-adamo-storefront.jpg.asset.json";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -43,9 +43,9 @@ const collections = [
   {
     title: "Casual Shoes",
     description: "Refined comfort for every day",
-    image: casualShoes,
+    image: casualShoe.url,
     to: "/casual-shoes" as const,
-    alt: "Cognac brown casual leather shoes",
+    alt: "Navy suede Italian-style casual lace-up shoe",
   },
   {
     title: "Belts",
@@ -222,70 +222,12 @@ function Index() {
         </div>
       </section>
 
-      {/* Visit us */}
-      <section className="border-t border-border">
-        <div className="mx-auto max-w-7xl px-6 pt-24 pb-14">
-           <p className="editorial-kicker">
-            Come pay us a visit
-          </p>
-           <h2 className="mt-4 max-w-xl font-display text-4xl font-semibold leading-none text-foreground md:text-6xl">
-            Experience the emporium in person
-          </h2>
-          <p className="mt-6 max-w-lg leading-relaxed text-muted-foreground">
-             Step into our boutique to find your ideal fit. Our team typically
-             replies within minutes on WhatsApp — or visit us at Fourways Mall.
-          </p>
-        </div>
-        <div className="relative h-[420px] w-full md:h-[520px]">
-          <a
-            href="https://www.google.com/maps/search/Marco+Adamo"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Open Marco Adamo stores in Google Maps"
-            className="absolute inset-0 block"
-          >
-            <iframe
-              title="Marco Adamo stores on Google Maps"
-              src="https://maps.google.com/maps?q=Marco%20Adamo&t=&z=11&ie=UTF8&iwloc=&output=embed"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="pointer-events-none absolute inset-0 h-full w-full border-0"
-              tabIndex={-1}
-            />
-          </a>
-          <div className="pointer-events-none absolute inset-0 flex items-end p-6 pb-16 md:p-8 md:pb-20">
-            <div className="flex flex-wrap gap-4">
-              <a
-                href="https://www.google.com/maps/search/Marco+Adamo"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="pointer-events-auto inline-flex items-center gap-2 rounded-md bg-primary px-7 py-3.5 text-sm font-semibold uppercase tracking-wider text-primary-foreground shadow-lg transition-colors hover:bg-primary/85"
-              >
-                <MapPin className="h-4 w-4" /> Find a store
-              </a>
-              <a
-                href="https://wa.me/27761964617"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="pointer-events-auto inline-flex items-center gap-2 rounded-md border border-border bg-background/80 px-7 py-3.5 text-sm font-semibold uppercase tracking-wider text-foreground shadow-lg backdrop-blur transition-colors hover:border-primary hover:text-primary"
-              >
-                Chat with us
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="border-t border-border bg-card">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
              <p className="editorial-kicker">Contact us</p>
              <h2 className="mt-4 font-display text-4xl font-semibold leading-none text-foreground md:text-6xl">How can we help?</h2>
             <p className="mt-6 max-w-md leading-relaxed text-muted-foreground">Ask about a shoe, belt, size or store visit. Complete the form and our team will get back to you.</p>
-            <div className="mt-8 space-y-4 text-sm text-muted-foreground">
-               <a href="mailto:adamomarco59@gmail.com" className="flex items-center gap-3 transition-colors hover:text-primary"><Mail className="h-4 w-4 text-primary" />adamomarco59@gmail.com</a>
-              <a href="tel:0825746017" className="flex items-center gap-3 transition-colors hover:text-primary"><Phone className="h-4 w-4 text-primary" />082 574 6017</a>
-            </div>
           </div>
           <form
              action="mailto:adamomarco59@gmail.com"

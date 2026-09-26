@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 import collectionShoes from "@/assets/collection-shoes.jpg";
 import collectionAccessories from "@/assets/collection-accessories.jpg";
-import casualShoes from "@/assets/collection-casual-shoes.jpg";
+import casualShoe from "@/assets/ca_IMG-20260915-WA0047.jpg.asset.json";
 
 export const Route = createFileRoute("/collections")({
   head: () => ({
@@ -38,9 +38,9 @@ const items = [
   {
     title: "Casual Shoes",
     description: "Refined leather footwear made for comfort beyond formal occasions.",
-    image: casualShoes,
+    image: casualShoe.url,
     to: "/casual-shoes" as const,
-    alt: "Cognac brown casual leather shoes",
+    alt: "Navy suede Italian-style casual lace-up shoe",
   },
   {
     title: "Belts",
