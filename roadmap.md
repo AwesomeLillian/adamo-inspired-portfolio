@@ -20,3 +20,4 @@
 - [x] Restore the footer signature treatments and shoe-focused company information.
 - [x] Replace unrelated tailoring imagery on the Our Story page with the storefront photograph.
 - [x] Remove visible email and phone details from the home contact section.
+- [x] Match the original site's Instrument Serif, Work Sans, and handwritten Mrs Saint Delafield signature typography.

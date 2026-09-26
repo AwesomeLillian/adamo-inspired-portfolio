@@ -11,9 +11,9 @@
  */
 
 @theme {
-  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Cormorant Garamond", Georgia, serif;
-  --font-logo: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Work Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Instrument Serif", Georgia, serif;
+  --font-logo: "Mrs Saint Delafield", cursive;
 }
 
 @theme inline {

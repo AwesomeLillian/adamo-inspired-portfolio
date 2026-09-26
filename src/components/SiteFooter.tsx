@@ -61,7 +61,7 @@ export function SiteFooter() {
 
       <div className="mx-auto max-w-7xl border-t border-border px-6 py-7">
         <p className="text-[0.55rem] uppercase tracking-[0.28em] text-muted-foreground">Tailored by</p>
-        <p className="mt-2 font-logo text-2xl italic text-foreground">WALT Studio</p>
+        <a href="https://coact.co.za" target="_blank" rel="noopener noreferrer" className="mt-2 inline-block font-logo text-3xl text-foreground transition-colors hover:text-primary">COACT Studio</a>
       </div>
 
       <div className="border-t border-border">
