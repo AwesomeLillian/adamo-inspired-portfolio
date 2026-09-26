@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Check } from "lucide-react";
 
-import casualShoes from "@/assets/collection-casual-shoes.jpg";
 import casualOption1 from "@/assets/ca_IMG-20260915-WA0033.jpg.asset.json";
 import casualOption2 from "@/assets/ca_IMG-20260915-WA0035.jpg.asset.json";
 import casualOption3 from "@/assets/ca_IMG-20260915-WA0037.jpg.asset.json";
@@ -51,7 +50,7 @@ function CasualShoesPage() {
   return (
     <>
       <section className="relative flex min-h-[60vh] items-center overflow-hidden">
-        <img src={casualShoes} alt="Italian-style brown suede casual loafers" className="absolute inset-0 h-full w-full object-cover" width={1024} height={1280} />
+        <img src={casualOption8.url} alt="Navy suede Italian-style casual lace-up shoe" className="absolute inset-0 h-full w-full object-cover object-center" width={1600} height={1200} />
         <div className="hero-overlay absolute inset-0" />
         <div className="relative mx-auto w-full max-w-7xl px-6 py-24">
           <p className="editorial-kicker border-l border-primary pl-4">The Casual Collection</p>
@@ -60,7 +59,7 @@ function CasualShoesPage() {
         </div>
       </section>
       <section className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 lg:grid-cols-2">
-        <div className="aspect-[4/3] overflow-hidden rounded-md border border-border"><img src={casualShoes} alt="Brown suede driving loafers from Marco Adamo" loading="lazy" width={1024} height={1280} className="h-full w-full object-cover" /></div>
+        <div className="aspect-[4/3] overflow-hidden rounded-md border border-border bg-product p-5"><img src={casualOption8.url} alt="Navy suede casual lace-up shoe from Marco Adamo" loading="lazy" width={1600} height={1200} className="h-full w-full object-contain" /></div>
         <div>
           <h2 className="font-display text-4xl font-semibold leading-none text-foreground md:text-5xl">Relaxed, never ordinary</h2>
           <p className="mt-6 leading-relaxed text-muted-foreground">Our casual selection balances an elegant Italian profile with the comfort needed for weekends, travel and smart everyday dressing.</p>

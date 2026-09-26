@@ -15,3 +15,8 @@
 - [x] Clean blue markings from the supplied classic-shoe photos and add the full selection.
 - [x] Show every collection image uncropped in equal product frames with descriptions.
 - [x] Update the enquiry recipient to adamomarco59@gmail.com.
+- [x] Replace the generated brown casual shoe with the strongest supplied casual style throughout the site.
+- [x] Keep one compact showroom map in the footer, matching the original site structure.
+- [x] Restore the footer signature treatments and shoe-focused company information.
+- [x] Replace unrelated tailoring imagery on the Our Story page with the storefront photograph.
+- [x] Remove visible email and phone details from the home contact section.

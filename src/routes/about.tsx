@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 
-import aboutTailor from "@/assets/about-tailor.jpg";
-import storeInterior from "@/assets/store-interior.jpg";
+import storefrontAsset from "@/assets/marco-adamo-storefront.jpg.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -41,8 +40,8 @@ function AboutPage() {
       <section className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 lg:grid-cols-2">
         <div className="overflow-hidden rounded-md border border-border">
           <img
-            src={aboutTailor}
-            alt="Master tailor measuring fabric in the Marco Adamo atelier"
+            src={storefrontAsset.url}
+            alt="Marco Adamo storefront at Fourways Mall"
             className="h-full w-full object-cover"
             width={1024}
             height={1280}
@@ -50,7 +49,7 @@ function AboutPage() {
         </div>
         <div>
           <h2 className="font-display text-3xl font-extrabold uppercase tracking-tight text-foreground md:text-4xl">
-            Over 35 years at the measure
+             Over 35 years of personal service
           </h2>
           <p className="mt-6 leading-relaxed text-muted-foreground">
              With over 35 years of experience, Marco Adamo is owner managed and
@@ -89,8 +88,8 @@ function AboutPage() {
           </div>
           <div className="order-1 overflow-hidden rounded-md border border-border lg:order-2">
             <img
-              src={storeInterior}
-              alt="Inside the Marco Adamo boutique"
+              src={storefrontAsset.url}
+              alt="Marco Adamo shoe boutique at Fourways Mall"
               loading="lazy"
               width={1280}
               height={1024}
