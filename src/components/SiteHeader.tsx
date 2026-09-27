@@ -160,7 +160,7 @@ export function SiteHeader() {
                 aria-label="Search the site"
                 onKeyDown={(e) => {
                   if (e.key === "Escape") setSearchOpen(false);
-                  if (e.key === "Enter" && results.length > 0) goTo(results[0].to);
+                  if (e.key === "Enter" && results.length > 0) goTo(results[0]);
                 }}
               />
               <Button
@@ -185,7 +185,7 @@ export function SiteHeader() {
                     <Button
                       type="button"
                       variant="ghost"
-                      onClick={() => goTo(item.to)}
+                      onClick={() => goTo(item)}
                       className="h-auto w-full justify-between rounded-none px-4 py-3 text-left text-sm font-medium text-foreground/80 hover:text-primary"
                     >
                       {item.label}
