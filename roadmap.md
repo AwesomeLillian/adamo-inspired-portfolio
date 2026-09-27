@@ -21,3 +21,11 @@
 - [x] Replace unrelated tailoring imagery on the Our Story page with the storefront photograph.
 - [x] Remove visible email and phone details from the home contact section.
 - [x] Match the original site's Instrument Serif, Work Sans, and handwritten Mrs Saint Delafield signature typography.
+
+## Casual collection and navigation update
+- [ ] Add the nine newly supplied casual-shoe photos to the Casual Shoes gallery.
+- [ ] Use the strongest new casual shoe as the main casual display across the site.
+- [ ] Restore the home Classic Shoes display as an unframed product image.
+- [ ] Add a Collections dropdown containing Classic Shoes, Casual Shoes, and Belts.
+- [ ] Point About navigation to the home-page About Us section and remove Visit from navigation.
+- [ ] Align mobile search and menu controls to the right and verify desktop/mobile layouts.
