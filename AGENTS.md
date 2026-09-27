@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Shared product collections use `ProductGallery` with fixed 4:3 `object-contain` frames so every supplied product remains fully visible and consistently described.
+- Group product-category navigation under one Collections dropdown on desktop and mobile to keep the header concise.

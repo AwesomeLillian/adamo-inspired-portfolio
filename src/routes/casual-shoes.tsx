@@ -10,6 +10,16 @@ import casualOption6 from "@/assets/ca_IMG-20260915-WA0043.jpg.asset.json";
 import casualOption7 from "@/assets/ca_IMG-20260915-WA0045.jpg.asset.json";
 import casualOption8 from "@/assets/ca_IMG-20260915-WA0047.jpg.asset.json";
 import casualOption9 from "@/assets/ca_IMG-20260915-WA0049.jpg.asset.json";
+import casualOption10 from "@/assets/ca_IMG-20260915-WA0052.jpg.asset.json";
+import casualOption11 from "@/assets/ca_IMG-20260915-WA0054.jpg.asset.json";
+import casualOption12 from "@/assets/ca_IMG-20260915-WA0056_1.jpg.asset.json";
+import casualOption13 from "@/assets/ca_IMG-20260915-WA0058.jpg.asset.json";
+import casualOption14 from "@/assets/ca_IMG-20260915-WA0060.jpg.asset.json";
+import casualOption15 from "@/assets/ca_IMG-20260915-WA0062.jpg.asset.json";
+import casualOption16 from "@/assets/ca_IMG-20260915-WA0064.jpg.asset.json";
+import casualOption17 from "@/assets/ca_IMG-20260915-WA0066.jpg.asset.json";
+import casualOption18 from "@/assets/ca_IMG-20260915-WA0068.jpg.asset.json";
+import casualOption19 from "@/assets/ca_IMG-20260915-WA0070.jpg.asset.json";
 import { ProductGallery } from "@/components/ProductGallery";
 
 export const Route = createFileRoute("/casual-shoes")({
@@ -44,13 +54,23 @@ const casualOptions = [
   { image: casualOption7.url, alt: "Black textured slip-on shoe with a white sole", description: "Crafted from genuine leather, with a premium leather upper and leather sole." },
   { image: casualOption8.url, alt: "Navy suede casual lace-up shoe", description: "Crafted from genuine leather, with a premium leather upper and leather sole." },
   { image: casualOption9.url, alt: "Black leather cap-toe derby shoe", description: "Crafted from genuine leather, with a premium leather upper and leather sole." },
+  { image: casualOption10.url, alt: "Black suede apron-toe lace-up shoe", description: "Crafted from genuine leather, with a premium leather upper and leather sole." },
+  { image: casualOption11.url, alt: "Black brogue shoe with blue detailing and a lightweight sole", description: "Crafted from genuine leather, with a premium leather upper and leather sole." },
+  { image: casualOption12.url, alt: "Black textured leather derby with contrast piping", description: "Crafted from genuine leather, with a premium leather upper and leather sole." },
+  { image: casualOption13.url, alt: "Black textured penny loafer with a contrast sole", description: "Crafted from genuine leather, with a premium leather upper and leather sole." },
+  { image: casualOption14.url, alt: "Navy suede penny loafer with a lightweight cream sole", description: "Crafted from genuine leather, with a premium leather upper and leather sole." },
+  { image: casualOption15.url, alt: "Black zip-front casual shoe with orange trim", description: "Crafted from genuine leather, with a premium leather upper and leather sole." },
+  { image: casualOption16.url, alt: "Black leather double monk-strap loafer", description: "Crafted from genuine leather, with a premium leather upper and leather sole." },
+  { image: casualOption17.url, alt: "Polished black leather derby with a contemporary sole", description: "Crafted from genuine leather, with a premium leather upper and leather sole." },
+  { image: casualOption18.url, alt: "Black patent leather horsebit loafer", description: "Crafted from genuine leather, with a premium leather upper and leather sole." },
+  { image: casualOption19.url, alt: "Black suede lace-up shoe with blue piping", description: "Crafted from genuine leather, with a premium leather upper and leather sole." },
 ];
 
 function CasualShoesPage() {
   return (
     <>
       <section className="relative flex min-h-[60vh] items-center overflow-hidden">
-        <img src={casualOption8.url} alt="Navy suede Italian-style casual lace-up shoe" className="absolute inset-0 h-full w-full object-cover object-center" width={1600} height={1200} />
+        <img src={casualOption18.url} alt="Black patent leather Italian-style horsebit loafer" className="absolute inset-0 h-full w-full object-cover object-center" width={1600} height={768} />
         <div className="hero-overlay absolute inset-0" />
         <div className="relative mx-auto w-full max-w-7xl px-6 py-24">
           <p className="editorial-kicker border-l border-primary pl-4">The Casual Collection</p>
@@ -59,7 +79,7 @@ function CasualShoesPage() {
         </div>
       </section>
       <section className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 lg:grid-cols-2">
-        <div className="aspect-[4/3] overflow-hidden rounded-md border border-border bg-product p-5"><img src={casualOption8.url} alt="Navy suede casual lace-up shoe from Marco Adamo" loading="lazy" width={1600} height={1200} className="h-full w-full object-contain" /></div>
+        <div className="aspect-[4/3] overflow-hidden rounded-md border border-border bg-product p-5"><img src={casualOption18.url} alt="Black patent leather horsebit loafer from Marco Adamo" loading="lazy" width={1600} height={768} className="h-full w-full object-contain" /></div>
         <div>
           <h2 className="font-display text-4xl font-semibold leading-none text-foreground md:text-5xl">Relaxed, never ordinary</h2>
           <p className="mt-6 leading-relaxed text-muted-foreground">Our casual selection balances an elegant Italian profile with the comfort needed for weekends, travel and smart everyday dressing.</p>

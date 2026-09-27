@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "@tanstack/react-router";
-import { Menu, Search, X } from "lucide-react";
+import { ChevronDown, Menu, Search, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 import logo from "@/assets/marco-adamo-logo.png";
@@ -15,8 +15,15 @@ const navItems = [
   { to: "/contact", label: "Contact" },
 ] as const;
 
+const collectionItems = [
+  { to: "/classic-shoes", label: "Classic Shoes" },
+  { to: "/casual-shoes", label: "Casual Shoes" },
+  { to: "/belts", label: "Belts" },
+] as const;
+
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const [collectionsOpen, setCollectionsOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [query, setQuery] = useState("");
   const searchInputRef = useRef<HTMLInputElement>(null);
@@ -45,24 +52,35 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur">
-      <div className="mx-auto grid h-20 max-w-7xl grid-cols-[1fr_auto_1fr] items-center px-6">
-        <Link to="/" className="flex items-center" aria-label="Marco Adamo home">
+      <div className="mx-auto grid h-20 max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center px-4 sm:px-6 lg:grid-cols-[1fr_auto_1fr]">
+        <Link to="/" className="flex min-w-0 items-center" aria-label="Marco Adamo home">
           <img
             src={logo}
             alt="Marco Adamo"
             width={500}
             height={250}
-            className="h-12 w-auto md:h-14"
+            className="h-11 w-auto max-w-full sm:h-12 md:h-14"
           />
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary navigation">
-          <Link to="/collections" className="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-foreground/70 transition-colors hover:text-primary">Collection</Link>
-          <Link to="/about" className="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-foreground/70 transition-colors hover:text-primary">Our story</Link>
-          <Link to="/contact" className="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-foreground/70 transition-colors hover:text-primary">Visit</Link>
+          <div className="group relative">
+            <Button type="button" variant="ghost" className="h-auto gap-1.5 px-0 py-3 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-foreground/70 hover:bg-transparent hover:text-primary">
+              Collection <ChevronDown className="h-3.5 w-3.5" />
+            </Button>
+            <div className="invisible absolute left-1/2 top-full w-52 -translate-x-1/2 border border-border bg-background py-2 opacity-0 shadow-2xl transition-all group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+              {collectionItems.map((item) => (
+                <Link key={item.to} to={item.to} className="block px-5 py-3 text-xs font-medium uppercase text-foreground/75 transition-colors hover:bg-accent hover:text-primary">
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+          <Link to="/" hash="about-us" className="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-foreground/70 transition-colors hover:text-primary">About</Link>
+          <Link to="/contact" className="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-foreground/70 transition-colors hover:text-primary">Contact</Link>
         </nav>
 
-        <div className="flex items-center justify-end gap-3">
+        <div className="col-start-2 flex items-center justify-end gap-1 sm:gap-2 lg:col-start-auto">
           <Button
             type="button"
             variant="ghost"
@@ -93,19 +111,29 @@ export function SiteHeader() {
           aria-label="Site navigation"
         >
           <ul className="flex flex-col gap-1">
-            {navItems.map((item) => (
-              <li key={`${item.to}-${item.label}`}>
-                <Link
-                  to={item.to}
-                  activeOptions={{ exact: item.to === "/" }}
-                  onClick={() => setOpen(false)}
-                  className="block rounded-md px-3 py-2.5 text-sm font-medium text-foreground/80 transition-colors hover:bg-accent hover:text-primary"
-                  activeProps={{ className: "text-primary" }}
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
+            <li>
+              <Link to="/" onClick={() => setOpen(false)} className="block rounded-md px-3 py-2.5 text-sm font-medium text-foreground/80 transition-colors hover:bg-accent hover:text-primary">Home</Link>
+            </li>
+            <li>
+              <Button type="button" variant="ghost" onClick={() => setCollectionsOpen((value) => !value)} aria-expanded={collectionsOpen} className="h-auto w-full justify-between px-3 py-2.5 text-sm font-medium text-foreground/80 hover:text-primary">
+                Collection <ChevronDown className={`h-4 w-4 transition-transform ${collectionsOpen ? "rotate-180" : ""}`} />
+              </Button>
+              {collectionsOpen && (
+                <ul className="ml-3 border-l border-border pl-3">
+                  {collectionItems.map((item) => (
+                    <li key={item.to}>
+                      <Link to={item.to} onClick={() => setOpen(false)} className="block px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-primary">{item.label}</Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+            <li>
+              <Link to="/" hash="about-us" onClick={() => setOpen(false)} className="block rounded-md px-3 py-2.5 text-sm font-medium text-foreground/80 transition-colors hover:bg-accent hover:text-primary">About</Link>
+            </li>
+            <li>
+              <Link to="/contact" onClick={() => setOpen(false)} className="block rounded-md px-3 py-2.5 text-sm font-medium text-foreground/80 transition-colors hover:bg-accent hover:text-primary">Contact</Link>
+            </li>
           </ul>
         </nav>
       )}
