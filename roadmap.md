@@ -23,9 +23,9 @@
 - [x] Match the original site's Instrument Serif, Work Sans, and handwritten Mrs Saint Delafield signature typography.
 
 ## Casual collection and navigation update
-- [ ] Add the nine newly supplied casual-shoe photos to the Casual Shoes gallery.
-- [ ] Use the strongest new casual shoe as the main casual display across the site.
-- [ ] Restore the home Classic Shoes display as an unframed product image.
-- [ ] Add a Collections dropdown containing Classic Shoes, Casual Shoes, and Belts.
-- [ ] Point About navigation to the home-page About Us section and remove Visit from navigation.
-- [ ] Align mobile search and menu controls to the right and verify desktop/mobile layouts.
+- [x] Add the ten newly supplied casual-shoe photos to the Casual Shoes gallery.
+- [x] Use the strongest new casual shoe as the main casual display across the site.
+- [x] Restore the home Classic Shoes display as an unframed product image.
+- [x] Add a Collections dropdown containing Classic Shoes, Casual Shoes, and Belts.
+- [x] Point About navigation to the home-page About Us section and remove Visit from navigation.
+- [x] Align mobile search and menu controls to the right and verify desktop/mobile layouts.

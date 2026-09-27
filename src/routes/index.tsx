@@ -3,7 +3,7 @@ import { ArrowRight, Diamond } from "lucide-react";
 
 import collectionShoes from "@/assets/collection-shoes.jpg";
 import collectionAccessories from "@/assets/collection-accessories.jpg";
-import casualShoe from "@/assets/ca_IMG-20260915-WA0047.jpg.asset.json";
+import casualShoe from "@/assets/ca_IMG-20260915-WA0068.jpg.asset.json";
 import storefrontAsset from "@/assets/marco-adamo-storefront.jpg.asset.json";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -45,7 +45,7 @@ const collections = [
     description: "Refined comfort for every day",
     image: casualShoe.url,
     to: "/casual-shoes" as const,
-    alt: "Navy suede Italian-style casual lace-up shoe",
+    alt: "Black patent leather Italian-style horsebit loafer",
   },
   {
     title: "Belts",
@@ -114,14 +114,14 @@ function Index() {
         <div className="mt-12 grid gap-5 sm:grid-cols-2 md:grid-cols-3">
           {collections.map((item) => (
             <Link key={item.title} to={item.to} className="group block">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-md border border-border">
+              <div className={`relative aspect-[4/5] overflow-hidden rounded-md ${item.title === "Classic Shoes" ? "" : "border border-border"}`}>
                 <img
                   src={item.image}
                   alt={item.alt}
                   loading="lazy"
                   width={1024}
                   height={1024}
-                    className="h-full w-full bg-product object-contain p-4"
+                  className={item.title === "Classic Shoes" ? "h-full w-full object-cover" : "h-full w-full bg-product object-contain p-4"}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/20 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-5">
@@ -191,7 +191,7 @@ function Index() {
       </section>
 
       {/* About teaser */}
-      <section className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 lg:grid-cols-2">
+      <section id="about-us" className="mx-auto grid scroll-mt-24 max-w-7xl items-center gap-12 px-6 py-24 lg:grid-cols-2">
         <div className="order-2 lg:order-1">
            <p className="editorial-kicker">
             About Us
