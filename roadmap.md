@@ -28,4 +28,4 @@
 - [x] Restore the home Classic Shoes display as an unframed product image.
 - [x] Add a Collections dropdown containing Classic Shoes, Casual Shoes, and Belts.
 - [x] Point About navigation to the home-page About Us section and remove Visit from navigation.
-- [ ] Align mobile search and menu controls to the right and verify desktop/mobile layouts.
+- [x] Align mobile search and menu controls to the right and verify desktop/mobile layouts.
