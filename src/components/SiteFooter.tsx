@@ -52,11 +52,12 @@ export function SiteFooter() {
         </div>
       </div>
 
-      <div className="mx-auto grid max-w-7xl gap-8 border-t border-border px-6 py-10 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mx-auto grid max-w-7xl gap-8 border-t border-border px-6 py-10 sm:grid-cols-2 lg:grid-cols-5">
         <Link to="/classic-shoes" className="text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:text-primary">Classic Shoes</Link>
         <Link to="/casual-shoes" className="text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:text-primary">Casual Shoes</Link>
         <Link to="/belts" className="text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:text-primary">Belts</Link>
-        <Link to="/" hash="about-us" className="text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:text-primary">About</Link>
+        <Link to="/about" className="text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:text-primary">Our Story</Link>
+        <Link to="/" hash="contact-us" className="text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:text-primary">Contact Us</Link>
       </div>
 
       <div className="mx-auto max-w-7xl border-t border-border px-6 py-7">

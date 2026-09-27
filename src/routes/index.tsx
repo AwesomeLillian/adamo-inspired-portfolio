@@ -222,7 +222,7 @@ function Index() {
         </div>
       </section>
 
-      <section className="border-t border-border bg-card">
+      <section id="contact-us" className="scroll-mt-24 border-t border-border bg-card">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
              <p className="editorial-kicker">Contact us</p>

@@ -11,8 +11,8 @@ const navItems = [
   { to: "/classic-shoes", label: "Classic Shoes" },
   { to: "/casual-shoes", label: "Casual Shoes" },
   { to: "/belts", label: "Belts" },
-  { to: "/about", label: "About" },
-  { to: "/contact", label: "Contact" },
+  { to: "/about", label: "Our Story" },
+  { to: "/", label: "Contact Us", hash: "contact-us" },
 ] as const;
 
 const collectionItems = [
@@ -44,10 +44,14 @@ export function SiteHeader() {
         })
     : navItems;
 
-  const goTo = (to: string) => {
+  const goTo = (item: (typeof navItems)[number]) => {
     setSearchOpen(false);
     setQuery("");
-    navigate({ to });
+    if ("hash" in item) {
+      navigate({ to: item.to, hash: item.hash });
+    } else {
+      navigate({ to: item.to });
+    }
   };
 
   return (
@@ -64,6 +68,7 @@ export function SiteHeader() {
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary navigation">
+          <Link to="/" className="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-foreground/70 transition-colors hover:text-primary">Home</Link>
           <div className="group relative">
             <Button type="button" variant="ghost" className="h-auto gap-1.5 px-0 py-3 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-foreground/70 hover:bg-transparent hover:text-primary">
               Collection <ChevronDown className="h-3.5 w-3.5" />
@@ -76,8 +81,8 @@ export function SiteHeader() {
               ))}
             </div>
           </div>
-          <Link to="/" hash="about-us" className="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-foreground/70 transition-colors hover:text-primary">About</Link>
-          <Link to="/contact" className="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-foreground/70 transition-colors hover:text-primary">Contact</Link>
+          <Link to="/about" className="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-foreground/70 transition-colors hover:text-primary">Our Story</Link>
+          <Link to="/" hash="contact-us" className="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-foreground/70 transition-colors hover:text-primary">Contact Us</Link>
         </nav>
 
         <div className="col-start-2 flex items-center justify-end gap-1 sm:gap-2 lg:col-start-auto">
@@ -129,10 +134,10 @@ export function SiteHeader() {
               )}
             </li>
             <li>
-              <Link to="/" hash="about-us" onClick={() => setOpen(false)} className="block rounded-md px-3 py-2.5 text-sm font-medium text-foreground/80 transition-colors hover:bg-accent hover:text-primary">About</Link>
+              <Link to="/about" onClick={() => setOpen(false)} className="block rounded-md px-3 py-2.5 text-sm font-medium text-foreground/80 transition-colors hover:bg-accent hover:text-primary">Our Story</Link>
             </li>
             <li>
-              <Link to="/contact" onClick={() => setOpen(false)} className="block rounded-md px-3 py-2.5 text-sm font-medium text-foreground/80 transition-colors hover:bg-accent hover:text-primary">Contact</Link>
+              <Link to="/" hash="contact-us" onClick={() => setOpen(false)} className="block rounded-md px-3 py-2.5 text-sm font-medium text-foreground/80 transition-colors hover:bg-accent hover:text-primary">Contact Us</Link>
             </li>
           </ul>
         </nav>
@@ -159,7 +164,7 @@ export function SiteHeader() {
                 aria-label="Search the site"
                 onKeyDown={(e) => {
                   if (e.key === "Escape") setSearchOpen(false);
-                  if (e.key === "Enter" && results.length > 0) goTo(results[0].to);
+                  if (e.key === "Enter" && results.length > 0) goTo(results[0]);
                 }}
               />
               <Button
@@ -184,7 +189,7 @@ export function SiteHeader() {
                     <Button
                       type="button"
                       variant="ghost"
-                      onClick={() => goTo(item.to)}
+                      onClick={() => goTo(item)}
                       className="h-auto w-full justify-between rounded-none px-4 py-3 text-left text-sm font-medium text-foreground/80 hover:text-primary"
                     >
                       {item.label}
