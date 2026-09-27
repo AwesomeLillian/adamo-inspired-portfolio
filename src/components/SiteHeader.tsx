@@ -47,7 +47,11 @@ export function SiteHeader() {
   const goTo = (item: (typeof navItems)[number]) => {
     setSearchOpen(false);
     setQuery("");
-    navigate({ to: item.to, hash: "hash" in item ? item.hash : undefined });
+    if ("hash" in item) {
+      navigate({ to: item.to, hash: item.hash });
+    } else {
+      navigate({ to: item.to });
+    }
   };
 
   return (
