@@ -44,10 +44,10 @@ export function SiteHeader() {
         })
     : navItems;
 
-  const goTo = (to: string) => {
+  const goTo = (item: (typeof navItems)[number]) => {
     setSearchOpen(false);
     setQuery("");
-    navigate({ to });
+    navigate({ to: item.to, hash: "hash" in item ? item.hash : undefined });
   };
 
   return (
