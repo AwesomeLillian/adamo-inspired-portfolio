@@ -11,8 +11,8 @@ const navItems = [
   { to: "/classic-shoes", label: "Classic Shoes" },
   { to: "/casual-shoes", label: "Casual Shoes" },
   { to: "/belts", label: "Belts" },
-  { to: "/about", label: "About" },
-  { to: "/contact", label: "Contact" },
+  { to: "/about", label: "Our Story" },
+  { to: "/", label: "Contact Us", hash: "contact-us" },
 ] as const;
 
 const collectionItems = [
