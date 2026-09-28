@@ -83,7 +83,7 @@ function CollectionsPage() {
                 loading="lazy"
                 width={1024}
                 height={1024}
-                className="aspect-[16/11] w-full object-contain p-5"
+                className={item.title === "Belts" ? "aspect-[16/11] w-full object-contain p-5" : "aspect-[16/11] w-full object-cover"}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/30 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-7">

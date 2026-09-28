@@ -14,7 +14,4 @@ export default defineConfig({
       crawlLinks: true,
     },
   },
-  vite: {
-    base: "/adamo-inspired-portfolio/",
-  },
 });

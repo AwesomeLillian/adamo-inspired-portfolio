@@ -114,14 +114,14 @@ function Index() {
         <div className="mt-12 grid gap-5 sm:grid-cols-2 md:grid-cols-3">
           {collections.map((item) => (
             <Link key={item.title} to={item.to} className="group block">
-              <div className={`relative aspect-[4/5] overflow-hidden rounded-md ${item.title === "Classic Shoes" ? "" : "border border-border"}`}>
+              <div className={`relative aspect-[4/5] overflow-hidden rounded-md ${item.title === "Belts" ? "border border-border" : ""}`}>
                 <img
                   src={item.image}
                   alt={item.alt}
                   loading="lazy"
                   width={1024}
                   height={1024}
-                  className={item.title === "Classic Shoes" ? "h-full w-full object-cover" : "h-full w-full bg-product object-contain p-4"}
+                  className={item.title === "Belts" ? "h-full w-full bg-product object-contain p-4" : "h-full w-full object-cover"}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/20 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-5">
