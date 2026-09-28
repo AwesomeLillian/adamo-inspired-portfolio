@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 import collectionShoes from "@/assets/collection-shoes.jpg";
 import collectionAccessories from "@/assets/collection-accessories.jpg";
-import casualShoe from "@/assets/ca_IMG-20260915-WA0068.jpg.asset.json";
+import casualWornDisplay from "@/assets/casual-brogue-worn-display.jpg";
 
 export const Route = createFileRoute("/collections")({
   head: () => ({
@@ -38,9 +38,9 @@ const items = [
   {
     title: "Casual Shoes",
     description: "Refined leather footwear made for comfort beyond formal occasions.",
-    image: casualShoe.url,
+    image: casualWornDisplay,
     to: "/casual-shoes" as const,
-    alt: "Black patent leather Italian-style horsebit loafer",
+    alt: "Marco Adamo black brogue shoes worn with tailored trousers",
   },
   {
     title: "Belts",
@@ -83,7 +83,7 @@ function CollectionsPage() {
                 loading="lazy"
                 width={1024}
                 height={1024}
-                className="aspect-[16/11] w-full object-contain p-5"
+                className={item.title === "Belts" ? "aspect-[16/11] w-full object-contain p-5" : "aspect-[16/11] w-full object-cover"}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/30 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-7">

@@ -29,3 +29,9 @@
 - [x] Add a Collections dropdown containing Classic Shoes, Casual Shoes, and Belts.
 - [x] Point About navigation to the home-page About Us section and remove Visit from navigation.
 - [x] Align mobile search and menu controls to the right and verify desktop/mobile layouts.
+
+## New product additions and display
+- [x] Add the two supplied black shoes to the Casual Shoes gallery.
+- [x] Add the supplied four-belt selection to the Belts gallery.
+- [x] Create and use a lifestyle display showing the strongest new shoe being worn.
+- [x] Confirm the original site structure and styling still render correctly on desktop and mobile.
