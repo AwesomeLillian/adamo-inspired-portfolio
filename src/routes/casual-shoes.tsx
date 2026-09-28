@@ -20,6 +20,9 @@ import casualOption16 from "@/assets/ca_IMG-20260915-WA0064.jpg.asset.json";
 import casualOption17 from "@/assets/ca_IMG-20260915-WA0066.jpg.asset.json";
 import casualOption18 from "@/assets/ca_IMG-20260915-WA0068.jpg.asset.json";
 import casualOption19 from "@/assets/ca_IMG-20260915-WA0070.jpg.asset.json";
+import casualOption20 from "@/assets/ca_IMG-20260915-WA0072.jpg.asset.json";
+import casualOption21 from "@/assets/ca_IMG-20260915-WA0076.jpg.asset.json";
+import casualWornDisplay from "@/assets/casual-brogue-worn-display.jpg";
 import { ProductGallery } from "@/components/ProductGallery";
 
 export const Route = createFileRoute("/casual-shoes")({
@@ -64,13 +67,15 @@ const casualOptions = [
   { image: casualOption17.url, alt: "Polished black leather derby with a contemporary sole", description: "Crafted from genuine leather, with a premium leather upper and leather sole." },
   { image: casualOption18.url, alt: "Black patent leather horsebit loafer", description: "Crafted from genuine leather, with a premium leather upper and leather sole." },
   { image: casualOption19.url, alt: "Black suede lace-up shoe with blue piping", description: "Crafted from genuine leather, with a premium leather upper and leather sole." },
+  { image: casualOption20.url, alt: "Polished black leather wingtip brogue derby", description: "Crafted from genuine leather, with a premium leather upper and leather sole." },
+  { image: casualOption21.url, alt: "Black leather derby with a sculpted layered sole", description: "Crafted from genuine leather, with a premium leather upper and leather sole." },
 ];
 
 function CasualShoesPage() {
   return (
     <>
       <section className="relative flex min-h-[60vh] items-center overflow-hidden">
-        <img src={casualOption18.url} alt="Black patent leather Italian-style horsebit loafer" className="absolute inset-0 h-full w-full object-cover object-center" width={1600} height={768} />
+        <img src={casualWornDisplay} alt="Marco Adamo black brogue shoes worn with tailored trousers" className="absolute inset-0 h-full w-full object-cover object-center" width={1600} height={1200} />
         <div className="hero-overlay absolute inset-0" />
         <div className="relative mx-auto w-full max-w-7xl px-6 py-24">
           <p className="editorial-kicker border-l border-primary pl-4">The Casual Collection</p>
@@ -79,7 +84,7 @@ function CasualShoesPage() {
         </div>
       </section>
       <section className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 lg:grid-cols-2">
-        <div className="aspect-[4/3] overflow-hidden rounded-md border border-border bg-product p-5"><img src={casualOption18.url} alt="Black patent leather horsebit loafer from Marco Adamo" loading="lazy" width={1600} height={768} className="h-full w-full object-contain" /></div>
+        <div className="aspect-[4/3] overflow-hidden rounded-md border border-border"><img src={casualWornDisplay} alt="Polished black brogue shoes styled with tailored charcoal trousers" loading="lazy" width={1600} height={1200} className="h-full w-full object-cover" /></div>
         <div>
           <h2 className="font-display text-4xl font-semibold leading-none text-foreground md:text-5xl">Relaxed, never ordinary</h2>
           <p className="mt-6 leading-relaxed text-muted-foreground">Our casual selection balances an elegant Italian profile with the comfort needed for weekends, travel and smart everyday dressing.</p>

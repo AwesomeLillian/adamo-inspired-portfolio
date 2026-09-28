@@ -12,6 +12,7 @@ import beltOption7 from "@/assets/b_IMG_20220803_141546.jpg.asset.json";
 import beltOption8 from "@/assets/b_IMG_20220803_141735.jpg.asset.json";
 import beltOption9 from "@/assets/b_IMG_20220803_141941.jpg.asset.json";
 import beltOption10 from "@/assets/b_IMG_20220803_142143.jpg.asset.json";
+import beltOption11 from "@/assets/b_IMG_20220727_131455.jpg.asset.json";
 import { ProductGallery } from "@/components/ProductGallery";
 
 export const Route = createFileRoute("/belts")({
@@ -47,6 +48,7 @@ const beltOptions = [
   { image: beltOption8.url, alt: "Navy, woven black, tan and black leather belts", description: "Genuine leather, carefully finished with precise stitching and a refined buckle." },
   { image: beltOption9.url, alt: "Brown, grey and black hand-stitched leather belts", description: "Genuine leather, carefully finished with precise stitching and a refined buckle." },
   { image: beltOption10.url, alt: "Tan, red and perforated suede belt collection", description: "Genuine leather, carefully finished with precise stitching and a refined buckle." },
+  { image: beltOption11.url, alt: "Four Marco Adamo leather belts in dark brown, tan and burgundy", description: "Genuine leather in polished and embossed finishes, completed with distinctive metal buckles." },
 ];
 
 function BeltsPage() {
