@@ -28,14 +28,12 @@ jobs:
           ls -la.output || echo "no.output"
           echo "--- checking.output/public ---"
           ls -la.output/public || echo "no.output/public"
+          echo "--- all files ---"
+          ls -la
           echo "--- copying to dist ---"
           mkdir -p dist
           if [ -d ".output/public" ]; then cp -r.output/public/* dist/; fi
           ls -la dist
-      - uses: actions/configure-pages@v4
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
 
   deploy:
     needs: build
