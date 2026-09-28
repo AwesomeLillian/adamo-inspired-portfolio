@@ -20,17 +20,15 @@ jobs:
           node-version: 20
       - run: npm install
       - run: npm run build
-      - name: Copy build to dist
+      - name: Prepare static files
         run: |
-          ls -la .output
           ls -la .output/public
-          mkdir -p dist
-          cp -r .output/public/* dist/
-          ls -la dist
+          touch .output/public/.nojekyll
+          cp .output/public/index.html .output/public/404.html || true
       - uses: actions/configure-pages@v4
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: .output/public
 
   deploy:
     needs: build
