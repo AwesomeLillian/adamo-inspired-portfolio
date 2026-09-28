@@ -20,20 +20,17 @@ jobs:
           node-version: 20
       - run: npm install
       - run: npm run build
-      - name: List build output
+      - name: Copy build to dist
         run: |
-          echo "--- checking dist ---"
-          ls -la dist || echo "no dist"
-          echo "--- checking.output ---"
-          ls -la.output || echo "no.output"
-          echo "--- checking.output/public ---"
-          ls -la.output/public || echo "no.output/public"
-          echo "--- all files ---"
-          ls -la
-          echo "--- copying to dist ---"
+          ls -la.output
+          ls -la.output/public
           mkdir -p dist
-          if [ -d ".output/public" ]; then cp -r.output/public/* dist/; fi
+          cp -r.output/public/* dist/
           ls -la dist
+      - uses: actions/configure-pages@v4
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
 
   deploy:
     needs: build
