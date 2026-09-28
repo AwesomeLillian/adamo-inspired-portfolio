@@ -11,7 +11,6 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
-import { Route as AdamoInspiredPortfolioRouteImport } from './routes/adamo-inspired-portfolio'
 import { Route as BeltsRouteImport } from './routes/belts'
 import { Route as CasualShoesRouteImport } from './routes/casual-shoes'
 import { Route as ClassicShoesRouteImport } from './routes/classic-shoes'
@@ -28,11 +27,6 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AdamoInspiredPortfolioRoute = AdamoInspiredPortfolioRouteImport.update({
-  id: '/adamo-inspired-portfolio',
-  path: '/adamo-inspired-portfolio',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BeltsRoute = BeltsRouteImport.update({
@@ -67,15 +61,14 @@ const ShoesRoute = ShoesRouteImport.update({
 } as any)
 const AdamoInspiredPortfolioSplatRoute =
   AdamoInspiredPortfolioSplatRouteImport.update({
-    id: '/$',
-    path: '/$',
-    getParentRoute: () => AdamoInspiredPortfolioRoute,
+    id: '/adamo-inspired-portfolio/$',
+    path: '/adamo-inspired-portfolio/$',
+    getParentRoute: () => rootRouteImport,
   } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/adamo-inspired-portfolio': typeof AdamoInspiredPortfolioRouteWithChildren
   '/belts': typeof BeltsRoute
   '/casual-shoes': typeof CasualShoesRoute
   '/classic-shoes': typeof ClassicShoesRoute
@@ -87,7 +80,6 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/adamo-inspired-portfolio': typeof AdamoInspiredPortfolioRouteWithChildren
   '/belts': typeof BeltsRoute
   '/casual-shoes': typeof CasualShoesRoute
   '/classic-shoes': typeof ClassicShoesRoute
@@ -100,7 +92,6 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/adamo-inspired-portfolio': typeof AdamoInspiredPortfolioRouteWithChildren
   '/belts': typeof BeltsRoute
   '/casual-shoes': typeof CasualShoesRoute
   '/classic-shoes': typeof ClassicShoesRoute
@@ -114,7 +105,6 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
-    | '/adamo-inspired-portfolio'
     | '/belts'
     | '/casual-shoes'
     | '/classic-shoes'
@@ -126,7 +116,6 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
-    | '/adamo-inspired-portfolio'
     | '/belts'
     | '/casual-shoes'
     | '/classic-shoes'
@@ -138,7 +127,6 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
-    | '/adamo-inspired-portfolio'
     | '/belts'
     | '/casual-shoes'
     | '/classic-shoes'
@@ -151,13 +139,13 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  AdamoInspiredPortfolioRoute: typeof AdamoInspiredPortfolioRouteWithChildren
   BeltsRoute: typeof BeltsRoute
   CasualShoesRoute: typeof CasualShoesRoute
   ClassicShoesRoute: typeof ClassicShoesRoute
   CollectionsRoute: typeof CollectionsRoute
   ContactRoute: typeof ContactRoute
   ShoesRoute: typeof ShoesRoute
+  AdamoInspiredPortfolioSplatRoute: typeof AdamoInspiredPortfolioSplatRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -174,13 +162,6 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/adamo-inspired-portfolio': {
-      id: '/adamo-inspired-portfolio'
-      path: '/adamo-inspired-portfolio'
-      fullPath: '/adamo-inspired-portfolio'
-      preLoaderRoute: typeof AdamoInspiredPortfolioRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/belts': {
@@ -227,38 +208,24 @@ declare module '@tanstack/react-router' {
     }
     '/adamo-inspired-portfolio/$': {
       id: '/adamo-inspired-portfolio/$'
-      path: '/$'
+      path: '/adamo-inspired-portfolio/$'
       fullPath: '/adamo-inspired-portfolio/$'
       preLoaderRoute: typeof AdamoInspiredPortfolioSplatRouteImport
-      parentRoute: typeof AdamoInspiredPortfolioRoute
+      parentRoute: typeof rootRouteImport
     }
   }
 }
 
-interface AdamoInspiredPortfolioRouteChildren {
-  AdamoInspiredPortfolioSplatRoute: typeof AdamoInspiredPortfolioSplatRoute
-}
-
-const AdamoInspiredPortfolioRouteChildren: AdamoInspiredPortfolioRouteChildren =
-  {
-    AdamoInspiredPortfolioSplatRoute: AdamoInspiredPortfolioSplatRoute,
-  }
-
-const AdamoInspiredPortfolioRouteWithChildren =
-  AdamoInspiredPortfolioRoute._addFileChildren(
-    AdamoInspiredPortfolioRouteChildren,
-  )
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  AdamoInspiredPortfolioRoute: AdamoInspiredPortfolioRouteWithChildren,
   BeltsRoute: BeltsRoute,
   CasualShoesRoute: CasualShoesRoute,
   ClassicShoesRoute: ClassicShoesRoute,
   CollectionsRoute: CollectionsRoute,
   ContactRoute: ContactRoute,
   ShoesRoute: ShoesRoute,
+  AdamoInspiredPortfolioSplatRoute: AdamoInspiredPortfolioSplatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
