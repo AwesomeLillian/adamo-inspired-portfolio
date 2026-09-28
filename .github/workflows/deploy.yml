@@ -22,10 +22,10 @@ jobs:
       - run: npm run build
       - name: Copy build to dist
         run: |
-          ls -la.output
-          ls -la.output/public
+          ls -la .output
+          ls -la .output/public
           mkdir -p dist
-          cp -r.output/public/* dist/
+          cp -r .output/public/* dist/
           ls -la dist
       - uses: actions/configure-pages@v4
       - uses: actions/upload-pages-artifact@v3
