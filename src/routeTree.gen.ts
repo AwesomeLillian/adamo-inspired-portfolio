@@ -17,6 +17,7 @@ import { Route as ClassicShoesRouteImport } from './routes/classic-shoes'
 import { Route as CollectionsRouteImport } from './routes/collections'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ShoesRouteImport } from './routes/shoes'
+import { Route as AdamoInspiredPortfolioSplatRouteImport } from './routes/adamo-inspired-portfolio.$'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -58,6 +59,12 @@ const ShoesRoute = ShoesRouteImport.update({
   path: '/shoes',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdamoInspiredPortfolioSplatRoute =
+  AdamoInspiredPortfolioSplatRouteImport.update({
+    id: '/adamo-inspired-portfolio/$',
+    path: '/adamo-inspired-portfolio/$',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -68,6 +75,7 @@ export interface FileRoutesByFullPath {
   '/collections': typeof CollectionsRoute
   '/contact': typeof ContactRoute
   '/shoes': typeof ShoesRoute
+  '/adamo-inspired-portfolio/$': typeof AdamoInspiredPortfolioSplatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -78,6 +86,7 @@ export interface FileRoutesByTo {
   '/collections': typeof CollectionsRoute
   '/contact': typeof ContactRoute
   '/shoes': typeof ShoesRoute
+  '/adamo-inspired-portfolio/$': typeof AdamoInspiredPortfolioSplatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -89,6 +98,7 @@ export interface FileRoutesById {
   '/collections': typeof CollectionsRoute
   '/contact': typeof ContactRoute
   '/shoes': typeof ShoesRoute
+  '/adamo-inspired-portfolio/$': typeof AdamoInspiredPortfolioSplatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -101,6 +111,7 @@ export interface FileRouteTypes {
     | '/collections'
     | '/contact'
     | '/shoes'
+    | '/adamo-inspired-portfolio/$'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -111,6 +122,7 @@ export interface FileRouteTypes {
     | '/collections'
     | '/contact'
     | '/shoes'
+    | '/adamo-inspired-portfolio/$'
   id:
     | '__root__'
     | '/'
@@ -121,6 +133,7 @@ export interface FileRouteTypes {
     | '/collections'
     | '/contact'
     | '/shoes'
+    | '/adamo-inspired-portfolio/$'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -132,6 +145,7 @@ export interface RootRouteChildren {
   CollectionsRoute: typeof CollectionsRoute
   ContactRoute: typeof ContactRoute
   ShoesRoute: typeof ShoesRoute
+  AdamoInspiredPortfolioSplatRoute: typeof AdamoInspiredPortfolioSplatRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -192,6 +206,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ShoesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/adamo-inspired-portfolio/$': {
+      id: '/adamo-inspired-portfolio/$'
+      path: '/adamo-inspired-portfolio/$'
+      fullPath: '/adamo-inspired-portfolio/$'
+      preLoaderRoute: typeof AdamoInspiredPortfolioSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -204,6 +225,7 @@ const rootRouteChildren: RootRouteChildren = {
   CollectionsRoute: CollectionsRoute,
   ContactRoute: ContactRoute,
   ShoesRoute: ShoesRoute,
+  AdamoInspiredPortfolioSplatRoute: AdamoInspiredPortfolioSplatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
