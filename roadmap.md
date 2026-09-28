@@ -34,4 +34,4 @@
 - [x] Add the two supplied black shoes to the Casual Shoes gallery.
 - [x] Add the supplied four-belt selection to the Belts gallery.
 - [x] Create and use a lifestyle display showing the strongest new shoe being worn.
-- [ ] Confirm the original site structure and styling still render correctly on desktop and mobile.
+- [x] Confirm the original site structure and styling still render correctly on desktop and mobile.
