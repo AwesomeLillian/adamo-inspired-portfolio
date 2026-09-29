@@ -36,7 +36,10 @@ export function SiteHeader() {
 
   useEffect(() => {
     const closeCollections = (event: MouseEvent) => {
-      if (!desktopCollectionsRef.current?.contains(event.target as Node)) {
+      if (
+        window.matchMedia("(min-width: 1024px)").matches &&
+        !desktopCollectionsRef.current?.contains(event.target as Node)
+      ) {
         setCollectionsOpen(false);
       }
     };
