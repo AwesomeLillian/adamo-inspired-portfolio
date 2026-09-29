@@ -93,7 +93,7 @@ function Index() {
       </section>
 
       {/* Our Collection */}
-      <section className="mx-auto max-w-7xl px-6 py-24">
+      <section className="mx-auto w-full px-6 py-20 lg:px-10 lg:py-24">
         <div className="flex items-end justify-between gap-6">
           <div>
             <p className="editorial-kicker">
@@ -114,14 +114,14 @@ function Index() {
         <div className="mt-12 grid gap-5 sm:grid-cols-2 md:grid-cols-3">
           {collections.map((item) => (
             <Link key={item.title} to={item.to} className="group block">
-              <div className={`relative aspect-[4/5] overflow-hidden rounded-md ${item.title === "Belts" ? "border border-border" : ""}`}>
+              <div className="relative aspect-[4/5] overflow-hidden border border-border transition-colors duration-300 group-hover:border-primary">
                 <img
                   src={item.image}
                   alt={item.alt}
                   loading="lazy"
                   width={1024}
                   height={1024}
-                  className={item.title === "Belts" ? "h-full w-full bg-product object-contain p-4" : "h-full w-full object-cover"}
+                  className="h-full w-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/20 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-5">
@@ -138,7 +138,7 @@ function Index() {
 
       {/* Diamond Collection */}
       <section className="border-y border-border bg-card">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 lg:grid-cols-2">
+        <div className="mx-auto grid w-full items-center gap-12 px-6 py-20 lg:grid-cols-2 lg:px-10 lg:py-24">
           <div className="overflow-hidden rounded-md border border-border">
             <img
               src={collectionShoes}

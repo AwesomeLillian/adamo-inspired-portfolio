@@ -83,8 +83,8 @@ function CasualShoesPage() {
           <p className="mt-6 max-w-xl leading-relaxed text-muted-foreground">Italian-inspired loafers and relaxed leather shoes chosen for easy sophistication, comfort and everyday style.</p>
         </div>
       </section>
-      <section className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 lg:grid-cols-2">
-        <div className="aspect-[4/3] overflow-hidden rounded-md border border-border"><img src={casualWornDisplay} alt="Polished black brogue shoes styled with tailored charcoal trousers" loading="lazy" width={1600} height={1200} className="h-full w-full object-cover" /></div>
+      <section className="mx-auto grid w-full items-center gap-12 px-6 py-20 lg:grid-cols-2 lg:px-10 lg:py-24">
+        <div className="aspect-[4/3] overflow-hidden"><img src={casualWornDisplay} alt="Polished black brogue shoes styled with tailored charcoal trousers" loading="lazy" width={1600} height={1200} className="h-full w-full object-cover" /></div>
         <div>
           <h2 className="font-display text-4xl font-semibold leading-none text-foreground md:text-5xl">Relaxed, never ordinary</h2>
           <p className="mt-6 leading-relaxed text-muted-foreground">Our casual selection balances an elegant Italian profile with the comfort needed for weekends, travel and smart everyday dressing.</p>

@@ -55,7 +55,7 @@ function CollectionsPage() {
   return (
     <>
       <section className="border-b border-border bg-card">
-        <div className="mx-auto max-w-7xl px-6 py-20">
+        <div className="mx-auto w-full px-6 py-20 lg:px-10">
           <p className="text-xs font-semibold uppercase tracking-[0.35em] text-primary">
             Marco Adamo
           </p>
@@ -69,13 +69,13 @@ function CollectionsPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-20">
+      <section className="mx-auto w-full px-6 py-20 lg:px-10">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {items.map((item) => (
             <Link
               key={item.title}
               to={item.to}
-              className="group relative block overflow-hidden rounded-md border border-border bg-product"
+              className="group relative block overflow-hidden border border-border bg-product transition-colors duration-300 hover:border-primary"
             >
               <img
                 src={item.image}
@@ -83,7 +83,7 @@ function CollectionsPage() {
                 loading="lazy"
                 width={1024}
                 height={1024}
-                className={item.title === "Belts" ? "aspect-[16/11] w-full object-contain p-5" : "aspect-[16/11] w-full object-cover"}
+                className="aspect-[16/11] w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/30 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-7">

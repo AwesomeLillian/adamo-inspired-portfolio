@@ -35,3 +35,10 @@
 - [x] Add the supplied four-belt selection to the Belts gallery.
 - [x] Create and use a lifestyle display showing the strongest new shoe being worn.
 - [x] Confirm the original site structure and styling still render correctly on desktop and mobile.
+
+## Full-width collection polish
+- [x] Restore root-based page addresses so direct collection links do not return 404.
+- [x] Keep the strongest casual brogue worn by a model as the featured casual display.
+- [x] Present belt displays as full photographs rather than inset product cards.
+- [x] Expand collection layouts across desktop while preserving mobile spacing.
+- [x] Add the original-style red border response to collection and product tiles.

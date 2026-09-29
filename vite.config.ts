@@ -17,6 +17,6 @@ export default defineConfig({
     },
   },
   vite: {
-    base: process.env.GITHUB_PAGES === "true" ? "/adamo-inspired-portfolio/" : "/",
+    base: process.env["GITHUB_PAGES"] === "true" ? "/adamo-inspired-portfolio/" : "/",
   },
 });
