@@ -63,8 +63,8 @@ function BeltsPage() {
           <p className="mt-6 max-w-xl leading-relaxed text-muted-foreground">The finishing detail that brings a look together, selected in timeless colours to complement your footwear.</p>
         </div>
       </section>
-      <section className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 lg:grid-cols-2">
-        <div className="overflow-hidden rounded-md border border-border"><img src={beltsImage} alt="Classic leather belts and accessories" loading="lazy" width={1024} height={1024} className="h-full max-h-[620px] w-full object-cover" /></div>
+      <section className="mx-auto grid w-full items-center gap-12 px-6 py-20 lg:grid-cols-2 lg:px-10 lg:py-24">
+        <div className="overflow-hidden"><img src={beltsImage} alt="Classic leather belts and accessories" loading="lazy" width={1024} height={1024} className="h-full max-h-[720px] w-full object-cover" /></div>
         <div>
           <h2 className="font-display text-4xl font-semibold leading-none text-foreground md:text-5xl">Complete the look</h2>
           <p className="mt-6 leading-relaxed text-muted-foreground">Choose a leather belt that works naturally with your favourite classic or casual pair. Our team can help you find the right colour, finish and fit.</p>
