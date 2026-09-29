@@ -6,13 +6,8 @@
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
-const isGitHubPages = process.env.GITHUB_PAGES === "true";
-
 export default defineConfig({
   tanstackStart: {
-    app: {
-      base: isGitHubPages ? "/adamo-inspired-portfolio/" : "/",
-    },
     server: {
       preset: "static",
     },
@@ -22,6 +17,6 @@ export default defineConfig({
     },
   },
   vite: {
-    base: isGitHubPages ? "/adamo-inspired-portfolio/" : "/",
+    base: process.env.GITHUB_PAGES === "true" ? "/adamo-inspired-portfolio/" : "/",
   },
 });
