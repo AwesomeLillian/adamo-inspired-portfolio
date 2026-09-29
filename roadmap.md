@@ -42,3 +42,8 @@
 - [x] Present belt displays as full photographs rather than inset product cards.
 - [x] Expand collection layouts across desktop while preserving mobile spacing.
 - [x] Add the original-style red border response to collection and product tiles.
+
+## Latest shoe update
+- [x] Close the Collection dropdown after a category is selected.
+- [x] Remove blue markings from the five supplied classic-shoe photos and add them to the Classic Shoes page.
+- [x] Feature the navy suede loafer in a new on-foot casual display.

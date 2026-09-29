@@ -3,7 +3,7 @@ import { ArrowRight, Diamond } from "lucide-react";
 
 import collectionShoes from "@/assets/collection-shoes.jpg";
 import collectionAccessories from "@/assets/collection-accessories.jpg";
-import casualWornDisplay from "@/assets/casual-brogue-worn-display.jpg";
+import casualWornDisplay from "@/assets/casual-loafer-on-feet-display.jpg";
 import storefrontAsset from "@/assets/marco-adamo-storefront.jpg.asset.json";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -45,7 +45,7 @@ const collections = [
     description: "Refined comfort for every day",
     image: casualWornDisplay,
     to: "/casual-shoes" as const,
-    alt: "Marco Adamo black brogue shoes worn with tailored trousers",
+    alt: "Navy suede Marco Adamo loafers worn with tailored trousers",
   },
   {
     title: "Belts",

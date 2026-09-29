@@ -27,11 +27,32 @@ export function SiteHeader() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [query, setQuery] = useState("");
   const searchInputRef = useRef<HTMLInputElement>(null);
+  const desktopCollectionsRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
   useEffect(() => {
     if (searchOpen) searchInputRef.current?.focus();
   }, [searchOpen]);
+
+  useEffect(() => {
+    const closeCollections = (event: MouseEvent) => {
+      if (
+        window.matchMedia("(min-width: 1024px)").matches &&
+        !desktopCollectionsRef.current?.contains(event.target as Node)
+      ) {
+        setCollectionsOpen(false);
+      }
+    };
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setCollectionsOpen(false);
+    };
+    document.addEventListener("mousedown", closeCollections);
+    document.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.removeEventListener("mousedown", closeCollections);
+      document.removeEventListener("keydown", closeOnEscape);
+    };
+  }, []);
 
   const normalizedQuery = query.trim().toLowerCase();
   const results = normalizedQuery
@@ -69,17 +90,19 @@ export function SiteHeader() {
 
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary navigation">
           <Link to="/" className="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-foreground/70 transition-colors hover:text-primary">Home</Link>
-          <div className="group relative">
-            <Button type="button" variant="ghost" className="h-auto gap-1.5 px-0 py-3 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-foreground/70 hover:bg-transparent hover:text-primary">
-              Collection <ChevronDown className="h-3.5 w-3.5" />
+          <div ref={desktopCollectionsRef} className="relative">
+            <Button type="button" variant="ghost" onClick={() => setCollectionsOpen((value) => !value)} aria-expanded={collectionsOpen} className="h-auto gap-1.5 px-0 py-3 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-foreground/70 hover:bg-transparent hover:text-primary">
+              Collection <ChevronDown className={`h-3.5 w-3.5 transition-transform ${collectionsOpen ? "rotate-180" : ""}`} />
             </Button>
-            <div className="invisible absolute left-1/2 top-full w-52 -translate-x-1/2 border border-border bg-background py-2 opacity-0 shadow-2xl transition-all group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-              {collectionItems.map((item) => (
-                <Link key={item.to} to={item.to} className="block px-5 py-3 text-xs font-medium uppercase text-foreground/75 transition-colors hover:bg-accent hover:text-primary">
-                  {item.label}
-                </Link>
-              ))}
-            </div>
+            {collectionsOpen && (
+              <div className="absolute left-1/2 top-full w-52 -translate-x-1/2 border border-border bg-background py-2 shadow-2xl">
+                {collectionItems.map((item) => (
+                  <Link key={item.to} to={item.to} onClick={() => setCollectionsOpen(false)} className="block px-5 py-3 text-xs font-medium uppercase text-foreground/75 transition-colors hover:bg-accent hover:text-primary">
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            )}
           </div>
           <Link to="/about" className="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-foreground/70 transition-colors hover:text-primary">Our Story</Link>
           <Link to="/" hash="contact-us" className="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-foreground/70 transition-colors hover:text-primary">Contact Us</Link>
@@ -127,7 +150,7 @@ export function SiteHeader() {
                 <ul className="ml-3 border-l border-border pl-3">
                   {collectionItems.map((item) => (
                     <li key={item.to}>
-                      <Link to={item.to} onClick={() => setOpen(false)} className="block px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-primary">{item.label}</Link>
+                      <Link to={item.to} onClick={() => { setOpen(false); setCollectionsOpen(false); }} className="block px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-primary">{item.label}</Link>
                     </li>
                   ))}
                 </ul>

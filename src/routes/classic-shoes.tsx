@@ -12,6 +12,11 @@ import classicOption7 from "@/assets/classic-model-11-clean.jpg.asset.json";
 import classicOption8 from "@/assets/classic-model-12-clean.jpg.asset.json";
 import classicOption9 from "@/assets/classic-model-13-clean.jpg.asset.json";
 import classicOption10 from "@/assets/classic-model-14-clean.jpg.asset.json";
+import classicOption11 from "@/assets/classic-model-15-clean.jpg";
+import classicOption12 from "@/assets/classic-model-16-clean.jpg";
+import classicOption13 from "@/assets/classic-model-17-clean.jpg";
+import classicOption14 from "@/assets/classic-model-18-clean.jpg";
+import classicOption15 from "@/assets/classic-model-19-clean.jpg";
 import { ProductGallery } from "@/components/ProductGallery";
 
 export const Route = createFileRoute("/classic-shoes")({
@@ -56,6 +61,11 @@ const classicOptions = [
   { image: classicOption8.url, alt: "Black, navy and brown textured leather lace-up shoes", description: leatherDescription },
   { image: classicOption9.url, alt: "Brown, black and navy buckle leather loafers", description: leatherDescription },
   { image: classicOption10.url, alt: "Black and oxblood leather derby shoes", description: leatherDescription },
+  { image: classicOption11, alt: "Navy, espresso and chestnut leather kiltie loafers", description: leatherDescription },
+  { image: classicOption12, alt: "Black and chestnut textured leather cap-toe oxfords", description: leatherDescription },
+  { image: classicOption13, alt: "Black and oxblood leather buckle loafers", description: leatherDescription },
+  { image: classicOption14, alt: "Black, navy and brown perforated leather lace-up shoes", description: leatherDescription },
+  { image: classicOption15, alt: "Navy, tan and dark brown leather penny loafers", description: leatherDescription },
 ];
 
 function ShoesPage() {
