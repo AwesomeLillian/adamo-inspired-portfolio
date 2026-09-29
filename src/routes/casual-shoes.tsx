@@ -22,7 +22,7 @@ import casualOption18 from "@/assets/ca_IMG-20260915-WA0068.jpg.asset.json";
 import casualOption19 from "@/assets/ca_IMG-20260915-WA0070.jpg.asset.json";
 import casualOption20 from "@/assets/ca_IMG-20260915-WA0072.jpg.asset.json";
 import casualOption21 from "@/assets/ca_IMG-20260915-WA0076.jpg.asset.json";
-import casualWornDisplay from "@/assets/casual-brogue-worn-display.jpg";
+import casualWornDisplay from "@/assets/casual-loafer-on-feet-display.jpg";
 import { ProductGallery } from "@/components/ProductGallery";
 
 export const Route = createFileRoute("/casual-shoes")({
@@ -75,7 +75,7 @@ function CasualShoesPage() {
   return (
     <>
       <section className="relative flex min-h-[60vh] items-center overflow-hidden">
-        <img src={casualWornDisplay} alt="Marco Adamo black brogue shoes worn with tailored trousers" className="absolute inset-0 h-full w-full object-cover object-center" width={1600} height={1200} />
+        <img src={casualWornDisplay} alt="Navy suede Marco Adamo loafers worn with tailored trousers" className="absolute inset-0 h-full w-full object-cover object-center" width={1600} height={1200} />
         <div className="hero-overlay absolute inset-0" />
         <div className="relative mx-auto w-full max-w-7xl px-6 py-24">
           <p className="editorial-kicker border-l border-primary pl-4">The Casual Collection</p>
@@ -84,7 +84,7 @@ function CasualShoesPage() {
         </div>
       </section>
       <section className="mx-auto grid w-full items-center gap-12 px-6 py-20 lg:grid-cols-2 lg:px-10 lg:py-24">
-        <div className="aspect-[4/3] overflow-hidden"><img src={casualWornDisplay} alt="Polished black brogue shoes styled with tailored charcoal trousers" loading="lazy" width={1600} height={1200} className="h-full w-full object-cover" /></div>
+        <div className="aspect-[4/3] overflow-hidden"><img src={casualWornDisplay} alt="Navy suede penny loafers styled with tailored grey trousers" loading="lazy" width={1600} height={1200} className="h-full w-full object-cover" /></div>
         <div>
           <h2 className="font-display text-4xl font-semibold leading-none text-foreground md:text-5xl">Relaxed, never ordinary</h2>
           <p className="mt-6 leading-relaxed text-muted-foreground">Our casual selection balances an elegant Italian profile with the comfort needed for weekends, travel and smart everyday dressing.</p>
